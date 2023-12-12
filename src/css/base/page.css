@@ -1,0 +1,27 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: gray;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 4px;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var();
+  background-color: var();
+}
