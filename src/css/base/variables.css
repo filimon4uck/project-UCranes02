@@ -1,4 +1,22 @@
 :root {
     --black: #242424;
+    --black-transparent-60: rgba(36, 36, 36, 0.6);
+    --black-transparent-40: rgba(36, 36, 36, 0.4);
+    --black-transparent-10: rgba(36, 36, 36, 0.1);
+    
+    --white: #F4F4F4;
+    --white-transparent-60: rgba(244, 244, 244, 0.6);
+    --white-transparent-40: rgba(244, 244, 244, 0.4);
+    --white-transparent-20: rgba(244, 244, 244, 0.2);
+    --white-transparent-10: rgba(244, 244, 244, 0.1);
+
+    --snow-white: #FFFFFF;
+    --yellow: #EEA10C;
+    --grey: #C6CDD1;
+    --disabled: #D4D4D4;
+
+    --picture-overlay: rgba(17, 17, 17, 0.50);
+    --modal-overlay: rgba(4, 4, 4, 0.40);
+    
     --transition-timing: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
