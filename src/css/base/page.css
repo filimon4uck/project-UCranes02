@@ -7,12 +7,12 @@ html {
 
 *::-webkit-scrollbar {
   width: 8px;
-  background-color: gray;
+  background-color: var(--black-transparent-10);
   border-radius: 4px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: var(--black);
   border-radius: 4px;
 }
 
@@ -22,6 +22,6 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  color: var();
-  background-color: var();
+  color: var(--black);
+  background-color: var(--white);
 }
