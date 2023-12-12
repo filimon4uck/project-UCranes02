@@ -3,5 +3,5 @@
   <p class="exercises-item-name">${i}</p>
   <p class="exercises-item-type">${s}</p>
 </li>
-`).join("")}function p(r){}function m(r){}function g(r){}const y=new d({});c.filter.addEventListener("click",p);c.gallery.addEventListener("click",m);c.gallery.addEventListener("click",g);async function h(){const r=await y.getFilters();c.gallery.innerHTML=f(r)}h();
+`).join("")}function p(r){}function m(r){}function g(r){}const y=new d({});c.filter.addEventListener("click",p);c.gallery.addEventListener("click",m);c.gallery.addEventListener("click",g);async function h(){const r=await y.getFilters();c.gallery.innerHTML=f(r.results)}h();
 //# sourceMappingURL=commonHelpers2.js.map
