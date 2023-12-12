@@ -12,7 +12,7 @@ elements.gallery.addEventListener('click', handleExercise)
 
 async function renderSubfilters() {
   const subFilters = await api.getFilters();
-  elements.gallery.innerHTML = subfiltersMarkup(subFilters);
+  elements.gallery.innerHTML = subfiltersMarkup(subFilters.results);
 }
 
 renderSubfilters();
