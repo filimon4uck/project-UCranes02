@@ -1,24 +1,14 @@
 <form class="form js-subscribe-form">
-    <p class="form-title">Subscribe and learn about new exercises!</p>
-    <label class="label">
-        <input class="form-subscribe" name="subscribe" type="email" placeholder="Email"
-            pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required>
-    </label>
-    <button class="form-btn ">Send</button>
+  <p class="form-title">Subscribe and learn about new exercises!</p>
+  <label class="label">
+    <input
+      class="form-subscribe"
+      name="subscribe"
+      type="email"
+      placeholder="Email"
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+      required
+    />
+  </label>
+  <button class="form-btn">Send</button>
 </form>
-
-<!-- import { showSuccess } from '../helpers/toaster';
-
-function handleSubscribe(e) {
-e.preventDefault();
-const formData = new FormData(e.currentTarget);
-const data = {};
-formData.forEach((value, key) => {
-data[key] = value;
-});
-console.table(data.subscribe);
-e.currentTarget.reset();
-showSuccess('Підписка оформлена. Дякуємо!');
-}
-
-export default handleSubscribe; -->
