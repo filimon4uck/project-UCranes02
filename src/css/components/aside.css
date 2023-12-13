@@ -1,3 +1,7 @@
+.aside {
+    padding-bottom: 80px;
+}
+
 .aside-list {
     display: flex;
     flex-direction: column;
@@ -5,7 +9,7 @@
 }
 
 .aside-list-item {
-    width: 335px;
+    /* width: 295px; */
     padding: 20px;
     border-radius: 20px;
 }
@@ -37,6 +41,7 @@
 /* --- quote --- */
 .aside-item-quote {
     background-color: var(--black);
+    position: relative;
 }
 
 .title-quote {
@@ -54,28 +59,52 @@
     color: var(--white);
 }
 
-.aside-icon {
+.aside-icon{
+    fill: var(--white);
+}
+
+.aside-icon-container {
     min-width: 34px;
     height: 32px;
-    background-color: var(--white-transparent-60);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.quote-container-color {
+    background-color: var(--white-transparent-20);
+}
+
+.hto-container-color{
+    background-color: var(--black);
+}
+
+.quote-inverted-commas {
+    position: absolute;
+    right: 20px;
+}
+
 .aside-list-img {
+    width: 335px;
     height: 242px;
+    border-radius: 20px;
     background-image: url("../../img/home/home-mobile.jpg");
     background-repeat: no-repeat;
 }
 
+@media (min-resolution: 192dpi) {
+    .aside-list-img {
+        background-image: url("../../img/home/home-mobile@2x.jpg");
+    }
+}
+
 .list-item-hto {
-    height: 201px;
     background-color: var(--snow-white);
 }
 
-.item-text-conteiner {
+
+.item-text-container {
     width: 245px;
     -webkit-box-orient: vertical;
     display: -webkit-box;
