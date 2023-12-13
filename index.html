@@ -9,16 +9,51 @@
     <script type="module" crossorigin src="/project-UCranes02/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-UCranes02/assets/vendor-2b35cb0d.js">
     <link rel="stylesheet" href="/project-UCranes02/assets/vendor-9918a8f8.css">
-    <link rel="stylesheet" href="/project-UCranes02/assets/styles-47057e77.css">
+    <link rel="stylesheet" href="/project-UCranes02/assets/styles-e7200adb.css">
   </head>
   <body>
-    <header class="container">
-  <a href="./index.html">Home</a>
-  <a href="./favorites.html">Favorites</a>
-  <p>Socials</p>
-  <button class="js-burger" type="button"></button>
+    <header class="header container">
+  <nav class="nav">
+    <a href="./index.html" class="logo-link" aria-label="your energy">
+      <svg class="logo-icon"  aria-label="Burger mobile menu btn">
+        <use href="../img/icons.svg#icon-logo"></use>
+      </svg>
+    </a>
+    <ul class="nav-list">
+        <li class="nav-item active-item"><a href="./index.html" class="nav-link link">Home</a></li>
+        <li class="nav-item"><a href="./favorites.html" class="nav-link link">Favorites</a></li>
+    </ul>
+  </nav>
+  <ul class="socials-list">
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-facebook"></use>
+            </svg>
+        </a>
+    </li>
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Instagram icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-instagram"></use>
+            </svg>
+        </a>
+    </li>
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Youtube icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-youtube"></use>
+            </svg>
+        </a>
+    </li>
+</ul>
+  <button class="mobile-menu-open-btn js-burger"  type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="visually-hidden" >Open menu</span>
+      <svg class="mobile-menu-open-btn-icon"  aria-label="Burger mobile menu btn">
+          <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-burger"></use>
+      </svg>
+  </button>
 </header>
-
     <main>
       <section class="block-hero">
   <div class="container">
@@ -164,7 +199,29 @@
     </main>
     <footer>
   <div class="container">
-    <p>Socials</p>
+    <ul class="socials-list">
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-facebook"></use>
+            </svg>
+        </a>
+    </li>
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Instagram icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-instagram"></use>
+            </svg>
+        </a>
+    </li>
+    <li class="socials-item">
+        <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank">
+            <svg class="socials-icon" width=28 height=28 aria-label="Youtube icon">
+                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-youtube"></use>
+            </svg>
+        </a>
+    </li>
+</ul>
     <p>Subscribe</p>
   </div>
 </footer>
