@@ -9,7 +9,7 @@
     <script type="module" crossorigin src="/project-UCranes02/commonHelpers2.js"></script>
     <link rel="modulepreload" crossorigin href="/project-UCranes02/assets/vendor-2b35cb0d.js">
     <link rel="stylesheet" href="/project-UCranes02/assets/vendor-9918a8f8.css">
-    <link rel="stylesheet" href="/project-UCranes02/assets/styles-e7200adb.css">
+    <link rel="stylesheet" href="/project-UCranes02/assets/styles-96ae304d.css">
   </head>
   <body>
     <header class="header container">
@@ -197,9 +197,16 @@
 </section>
 
     </main>
-    <footer>
+    <footer class="footer">
   <div class="container">
-    <ul class="socials-list">
+    <div class="footer-top">
+      <div class="social-wrap">
+        <a href="./index.html" class="footer-logo" aria-label="your energy">
+          <svg class="footer-icon" aria-label="Burger mobile menu btn">
+            <use href="../img/icons.svg#icon-logo"></use>
+          </svg>
+        </a>
+        <ul class="socials-list">
     <li class="socials-item">
         <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
@@ -222,7 +229,35 @@
         </a>
     </li>
 </ul>
-    <p>Subscribe</p>
+      </div>
+      <div class="form-wrapper">
+        <p class="slogan">Transforming your <span>body</span> shape with us</p>
+        <form class="form js-subscribe-form">
+  <p class="form-title">Subscribe and learn about new exercises!</p>
+  <label class="label">
+    <input
+      class="form-subscribe"
+      name="subscribe"
+      type="email"
+      placeholder="Email"
+      pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+      required
+    />
+  </label>
+  <button class="form-btn">Send</button>
+</form>
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="terms-wrapper">
+        <p>Your Energy. All rights reserved.</p>
+        <p class="terms">
+          <span>Privacy Policy</span><span>Terms of Service</span>
+        </p>
+      </div>
+      <p>&copy; 2023</p>
+    </div>
   </div>
 </footer>
 
