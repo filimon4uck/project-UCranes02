@@ -61,11 +61,17 @@
 .terms {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 
-.terms span:first-child::after {
-  content: '/';
-  margin-left: 10px;
+.terms span {
+  transition: color var(--transition-timing);
+}
+
+.terms span:hover,
+.terms span:focus {
+  color: #2f5131;
+  animation: shake 1s;
 }
 
 @media screen and (max-width: 767px) {

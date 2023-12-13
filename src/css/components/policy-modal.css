@@ -1,0 +1,126 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(198, 205, 209, 0.5);
+  z-index: 2000;
+  transform: scale(1);
+  transition: opacity var(--transition-timing),
+    visibility var(--transition-timing);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.is-hidden .policy-modal {
+  transform: translate(-50%, -100%);
+}
+
+.policy-modal {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: calc(100% - 30px);
+  max-width: 100%;
+  height: auto;
+  max-height: 90vh;
+  padding: 24px 0;
+  border-radius: 12px;
+  background-color: var(--white);
+  transition: transform var(--transition-timing);
+}
+
+.scroll-container {
+  overflow: auto;
+  padding: 0 20px;
+}
+
+.policy-modal-close-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: none;
+  background-color: transparent;
+  line-height: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: var(--black);
+  transition: color var(--transition-timing);
+}
+.close-mobile-menu-icon {
+  width: 32px;
+  height: 32px;
+  stroke: currentColor;
+}
+
+.policy-modal-close-btn:hover {
+  color: var(--green);
+}
+
+.policy-title {
+  color: var(--black);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.policy-text-wrap {
+  color: var(--black);
+}
+
+.policy-text {
+  margin-bottom: 8px;
+}
+
+.policy-terms-list {
+  padding: 0 0 0 20px;
+  margin: 0;
+  list-style: decimal;
+}
+.policy-terms-list-item {
+  margin-bottom: 8px;
+}
+.policy-terms-list-subtitle {
+  margin-bottom: 4px;
+}
+.policy-terms-list-text {
+  margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .policy-modal {
+    width: 704px;
+    padding-top: 20px;
+    padding-bottom: 48px;
+  }
+
+  .scroll-container {
+    padding: 0 32px;
+  }
+
+  .policy-modal-close-btn {
+    right: 32px;
+    top: 32px;
+  }
+
+  .policy-title {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+}
