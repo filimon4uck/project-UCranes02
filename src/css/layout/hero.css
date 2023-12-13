@@ -14,7 +14,7 @@
 .hero-main-title {
   color: var(--black);
   font-size: 38px;
-  line-height: 44px;
+  line-height: 1.15;
   letter-spacing: -0.007em;
   margin-bottom: 20px;
   font-weight: 400;
@@ -26,7 +26,7 @@
   color: var(--black);
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px; /* 128.571% */
+  line-height: 1.3; /* 128.571% */
   letter-spacing: -0.003em;
   margin-bottom: 20px;
 }
@@ -52,7 +52,7 @@
   color: var(--black);
   font-size: 14px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 1.3;
 }
 .block-hero {
   padding-bottom: 20px;
@@ -73,7 +73,7 @@
     width: 100%;
   }
   .hero-main-title {
-    line-height: 74px; /* 100% */
+    line-height: 1; /* 100% */
     letter-spacing: -1.48px;
     font-size: 74px;
     width: 639px;
@@ -87,7 +87,7 @@
   .hero-text {
     font-size: 18px;
     font-weight: 400;
-    line-height: 24px; /* 133.333% */
+    line-height: 1.33; /* 133.333% */
     letter-spacing: -0.36px;
     width: 528px;
     margin-bottom: 32px;
