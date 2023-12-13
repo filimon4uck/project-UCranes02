@@ -3,9 +3,9 @@ import { renderExercises } from '../renderers';
 
 async function handleSubfilter(e) {
   e.preventDefault();
-  if (e.target.nodeName.toLowerCase() === 'ul') return;
+  if (!e.target.closest('[data-subfilter]')) return;
 
-  exercisesApi.subFilter = e.target.closest('li').dataset.subfilter;
+  exercisesApi.subFilter = e.target.closest('[data-subfilter]').dataset.subfilter;
   renderExercises();
 }
 export default handleSubfilter;
