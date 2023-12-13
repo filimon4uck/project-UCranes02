@@ -6,43 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YourEnergy - Get Body in shape, Stay healthy</title>
     
-    <script type="module" crossorigin src="/project-UCranes02/commonHelpers2.js"></script>
-    <link rel="modulepreload" crossorigin href="/project-UCranes02/assets/vendor-2b35cb0d.js">
+    <script type="module" crossorigin src="/project-UCranes02/assets/vendor-2b35cb0d.js"></script>
+    <script type="module" crossorigin src="/project-UCranes02/assets/main-cf7b02a8.js"></script>
+    <link rel="stylesheet" href="/project-UCranes02/assets/main-593d8fa2.css">
     <link rel="stylesheet" href="/project-UCranes02/assets/vendor-9918a8f8.css">
-    <link rel="stylesheet" href="/project-UCranes02/assets/styles-61f4a98a.css">
   </head>
   <body>
     <header class="header container">
   <nav class="nav">
     <a href="./index.html" class="logo-link" aria-label="your energy">
       <svg class="logo-icon"  aria-label="Burger mobile menu btn">
-        <use href="../img/icons.svg#icon-logo"></use>
+        <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-logo"></use>
       </svg>
     </a>
     <ul class="nav-list">
-        <li class="nav-item active-item"><a href="./index.html" class="nav-link link">Home</a></li>
-        <li class="nav-item"><a href="./favorites.html" class="nav-link link">Favorites</a></li>
+        <li class="nav-item nav-home"><a href="./index.html" class="nav-link">Home</a></li>
+        <li class="nav-item nav-favorites"><a href="./favorites.html" class="nav-link">Favorites</a></li>
     </ul>
   </nav>
   <ul class="socials-list">
     <li class="socials-item">
         <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-facebook"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-facebook"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Instagram icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-instagram"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-instagram"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Youtube icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-youtube"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-youtube"></use>
             </svg>
         </a>
     </li>
@@ -50,7 +50,7 @@
   <button class="mobile-menu-open-btn js-burger"  type="button" aria-expanded="false" aria-controls="mobile-menu">
       <span class="visually-hidden" >Open menu</span>
       <svg class="mobile-menu-open-btn-icon"  aria-label="Burger mobile menu btn">
-          <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-burger"></use>
+          <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-burger"></use>
       </svg>
   </button>
 </header>
@@ -75,8 +75,8 @@
         <div class="block-small-img-teg">
           <img
             class="small-img-hero"
-            src="../img/hero/hero-desktop-small.jpg"
-            srcset="../img/hero/hero-desktop-small@2x.jpg 2x"
+            src="data:image/jpeg;base64,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"
+            srcset="/project-UCranes02/assets/hero-desktop-small@2x-c266111c.jpg 2x"
             alt="legs"
           />
           <ul class="hero-list-for-des">
@@ -99,19 +99,16 @@
       <picture class="img-cont">
         <source
           media="(min-width: 1440px)"
-          srcset="../img/hero/hero-desktop.jpg"
+          srcset="/project-UCranes02/assets/hero-desktop@2x-a9441c00.jpg 2x, /project-UCranes02/assets/hero-desktop-6e31c8c3.jpg "
         />
         <source
           media="(min-width: 768px)"
-          srcset="../img/hero/hero-tablet.jpg"
+          srcset="/project-UCranes02/assets/hero-tablet@2x-c87803e3.jpg 2x, /project-UCranes02/assets/hero-tablet-4d654ae6.jpg "
         />
         <img
           class="img-hero"
-          srcset="
-            ../img/hero/hero-mobile@2x.jpg 2x,
-            ../img/hero/hero-mobile.jpg
-          "
-          alt="sport-girls"
+          srcset="/project-UCranes02/assets/hero-mobile@2x-7cd03699.jpg 2x, /project-UCranes02/assets/hero-mobile-fd80e81d.jpg "
+          alt="two woman do exercises"
           width="335"
           height="460"
         />
@@ -210,21 +207,21 @@
     <li class="socials-item">
         <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-facebook"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-facebook"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Instagram icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-instagram"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-instagram"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Youtube icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-youtube"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-youtube"></use>
             </svg>
         </a>
     </li>
@@ -266,7 +263,7 @@
         <div class="mobile-menu" id="mobile-menu">
             <button class="mobile-menu-close-btn" type="button">
                 <svg class="close-mobile-burger-menu-icon" aria-label="Modal window close icon">
-                    <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-close"></use>
+                    <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-close"></use>
                 </svg>
             </button>
             <div class="mobile-menu-nav-wrap">
@@ -281,21 +278,21 @@
     <li class="socials-item">
         <a class="socials-link" href="https://www.facebook.com/goITclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Facebook icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-facebook"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-facebook"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.instagram.com/goitclub/" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Instagram icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-instagram"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-instagram"></use>
             </svg>
         </a>
     </li>
     <li class="socials-item">
         <a class="socials-link" href="https://www.youtube.com/c/GoIT" target="_blank">
             <svg class="socials-icon" width=28 height=28 aria-label="Youtube icon">
-                <use href="/project-UCranes02/assets/icons-d5ea2dcd.svg#icon-youtube"></use>
+                <use href="/project-UCranes02/assets/icons-ad497ffe.svg#icon-youtube"></use>
             </svg>
         </a>
     </li>
