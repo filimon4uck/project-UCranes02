@@ -57,4 +57,5 @@ class ExercisesAPI {
   }
 }
 
-export { ExercisesAPI };
+const exercisesApi = new ExercisesAPI({});
+export { exercisesApi };
