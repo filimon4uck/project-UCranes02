@@ -1,5 +1,5 @@
 import 'modern-normalize';
-import exercisesMarkup from './js/templates/exercises-markup';
+
 import { ExercisesAPI } from './js/services/exercises-api';
 import { elements } from './js/elements';
 import { subfiltersMarkup } from './js/templates';

@@ -1,8 +1,8 @@
 function exercisesMarkup(array) {
   return array
     .map(
-      ({ id, bodyPart, name, target, rating, burnedCalories, time }) => `
-      <li data-id="${id}">
+      ({ _id, bodyPart, name, target, rating, burnedCalories, time }) => `
+      <li data-id="${_id}">
         <a class="link-exercise-card" href="">
           <!-- Top place card -->
           <div class="cont-rating-btn-title">
