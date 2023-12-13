@@ -1,0 +1,141 @@
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop {
+  max-width: 335px;
+  height: 357px;
+  border-radius: 20px;
+  background: #242424;
+  flex-shrink: 0;
+  position: relative;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.modal__close-btn {
+  display: block;
+  /* padding: 0; */
+  justify-content: center;
+  align-items: center;
+  right: 14px;
+  top: 14px;
+  background-color: transparent;
+  stroke: #f4f4f4;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+}
+
+.title_rating {
+  display: block;
+  padding-top: 2px;
+  color: rgba(244, 244, 244, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: DM Sans;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.users_rating {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding-top: 8px;
+  padding-bottom: 20px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  height: ;
+}
+
+.number_rating {
+  color: #f4f4f4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: DM Sans;
+}
+
+.email_field {
+  display: inline-flex;
+  padding: 12px 14px 12px 14px;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid #f4f4f4;
+  background: none;
+  height: 42px;
+  width: 295px;
+  margin-bottom: 10px;
+  color: rgba(244, 244, 244, 0.6);
+}
+
+.comment_field {
+  color: rgba(244, 244, 244, 0.6);
+  display: inline-flex;
+  padding: 12px 14px 63px 14px;
+  align-items: center;
+  border-radius: 15px;
+  background: none;
+  border: 1px solid #f4f4f4;
+  width: 295px;
+  height: 93px;
+  margin-bottom: 20px;
+}
+
+.btn_submit {
+  display: flex;
+  width: 295px;
+  padding: 12px 131px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: #f4f4f4;
+  border: none;
+}
+/* radio button */
+
+.rating {
+  float: left;
+  border: none;
+}
+.rating:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
+}
+.rating:not(:checked) > label {
+  float: right;
+  width: 26px;
+  height: 26px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 200%;
+  line-height: 1.2;
+  color: rgba(244, 244, 244, 0.2);
+}
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+.rating > input:checked ~ label {
+  color: #eea10c;
+}
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: gold;
+}
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #ea0;
+}
+.rating > label:active {
+  position: relative;
+}
+/* ============= */
