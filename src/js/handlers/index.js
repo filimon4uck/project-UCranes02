@@ -1,6 +1,6 @@
 import handleFilter from './filter-handler';
 import handleSubfilter from './subfilter-handler';
 import handleExercise from './exercise-handler';
-import pageSwitch from './page-switch';
+import handleNavigation from './navigation-handler';
 
-export { handleFilter, handleSubfilter, handleExercise, pageSwitch };
+export { handleFilter, handleSubfilter, handleExercise, handleNavigation };
