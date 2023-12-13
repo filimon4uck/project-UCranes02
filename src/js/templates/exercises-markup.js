@@ -1,8 +1,9 @@
 function exercisesMarkup(array) {
-  return array.map(
-    ({ id, bodyPart, name, target, rating, burnedCalories, time }) => `
-            <li data-id="${id}">
-            <a class="link-exercise-card" href="">
+  return array
+    .map(
+      ({ id, bodyPart, name, target, rating, burnedCalories, time }) => `
+      <li data-id="${id}">
+        <a class="link-exercise-card" href="">
           <!-- Top place card -->
           <div class="cont-rating-btn-title">
             <div class="const-text-exer">
@@ -41,11 +42,12 @@ function exercisesMarkup(array) {
             <li class="item-card-exer">
               <p class="text-title-item-exer">Target:</p>
               <p class="text-info-exer">${target}</p>
-              </a>
             </li>
           </ul>
+          </a>
         </li>`
-  );
+    )
+    .join('');
 }
 
 export default exercisesMarkup;
