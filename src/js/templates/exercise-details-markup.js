@@ -9,8 +9,14 @@ function exerciseDetailsMarkup({
   burnedCalories,
   time,
   popularity,
+  _id,
 }) {
   const newRating = Math.round(rating);
+  let isId = false;
+  const parsedData = JSON.parse(localStorage.getItem('favorites'));
+  if (parsedData) {
+    isId = parsedData.some(obj => obj._id === _id);
+  }
   return `
   <div class="exercise-modal-backdrop" >
     <div class="exercise-modal">
@@ -67,9 +73,15 @@ function exerciseDetailsMarkup({
                     </div>
                     <div class="exercise-card-btn-group">
                         <button class="card-btn add-favorites-btn">
-                            <span>Add to favorites</span>
-                            <svg class="favorites-icon" aria-label="Favorite icon" width="20" height="20">
-                                <use href="./img/icons.svg#icon-heart"></use>
+                            <span>${
+                              isId
+                                ? 'Remove from favorites'
+                                : 'Add to favorites'
+                            }</span>
+                            <svg class="favorites-icon" aria-label="Favorite icon" width="20" height="20" >
+                                <use href="./img/icons.svg#icon-${
+                                  isId ? 'remove' : 'heart'
+                                }"></use>
                             </svg>
                         </button>
                         <button class="card-btn add-rating-btn">Give a rating</button>
