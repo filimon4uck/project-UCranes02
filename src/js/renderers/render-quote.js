@@ -5,33 +5,54 @@ import { quoteMarkup } from '../templates';
 
 async function renderQuote() {
    
-    try {
-        const date = new Date();
-        const today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-        let quote;
+    const date = new Date();
+    const today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    let quote;
         
         
-        const parseQuote = JSON.parse(localStorage.getItem(common.LS_KEY_QUOTE));
-        if (parseQuote) {
-            
-            if (today !== parseQuote.date) {
+    const parseQuote = JSON.parse(localStorage.getItem(common.LS_KEY_QUOTE));
+    if (parseQuote) {
+       
+        if (today !== parseQuote.date) {
+
+            try {
                 quote = await exercisesApi.getQuote();
-                quote.date = today;
-                localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
-                elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(quote))
-            } else {
-                elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(parseQuote))
+                
+                if (!quote.author || !quote.quote) {
+                    throw Error("empty data")
+                }
+
+            } catch (error) {
+                elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(common.BASE_QUOTE))
+                console.log(error.message);
+                return;
             }
-            
-        } else {
-            quote = await exercisesApi.getQuote();
+
             quote.date = today;
             localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
             elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(quote))
+        } else {
+            elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(parseQuote))
         }
-
-    } catch {
         
+    } else {
+
+         try {
+                quote = await exercisesApi.getQuote();
+                
+                if (!quote.author || !quote.quote) {
+                    throw Error("empty data")
+                }
+
+            } catch (error) {
+                elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(common.BASE_QUOTE))
+                console.log(error.message);
+                return;
+            }
+
+        quote.date = today;
+        localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
+        elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(quote))
     }
 
 }
