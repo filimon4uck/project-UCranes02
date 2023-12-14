@@ -15,6 +15,4 @@ elements.gallery.addEventListener('click', handleExercise);
 
 handleNavigation();
 renderSubfilters();
-
-
 renderQuote();
