@@ -19,8 +19,10 @@ function handleFavorites(data) {
         const index = parsedData.map(obj => obj._id).indexOf(data._id);
         parsedData.splice(index, 1);
         localStorage.setItem('favorites', JSON.stringify(parsedData));
-
         favorite.querySelector('span').textContent = `Add to favorites`;
+        favorite
+          .querySelector('use')
+          .setAttribute('href', './img/icons.svg#icon-heart');
       }
     } else {
       const firstData = JSON.stringify([data]);
