@@ -1,4 +1,4 @@
-import renderSubfilters from '../renderers/render-subfilters';
+import { renderSubfilters } from '../renderers';
 import { exercisesApi } from '../services/exercises-api';
 
 function handleFilter(e) {

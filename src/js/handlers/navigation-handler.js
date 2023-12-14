@@ -1,6 +1,6 @@
 import { elements } from '../elements';
 
-function pageSwitch() {
+function handleNavigation() {
   if (location.href.includes('index.html')) {
     elements.nav_home.classList.add('active-item');
     elements.nav_favorites.classList.remove('active-item');
@@ -13,4 +13,4 @@ function pageSwitch() {
   }
 }
 
-export default pageSwitch;
+export default handleNavigation;
