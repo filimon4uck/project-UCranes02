@@ -4,7 +4,7 @@
       <div class="social-wrap">
         <a href="./index.html" class="footer-logo" aria-label="your energy">
           <svg class="footer-icon" aria-label="Burger mobile menu btn">
-            <use href="../img/icons.svg#icon-logo"></use>
+            <use href="/img/icons.svg#icon-logo"></use>
           </svg>
         </a>
         <load ="partials/socials.html" />
@@ -17,11 +17,15 @@
     <div class="footer-bottom">
       <div class="terms-wrapper">
         <p>Your Energy. All rights reserved.</p>
-        <p class="terms">
-          <span>Privacy Policy</span><span>Terms of Service</span>
-        </p>
+        <div class="terms">
+          <span class="js-policy-modal-open">Privacy Policy</span>
+          /
+          <span class="js-terms-modal-open">Terms of Service</span>
+        </div>
       </div>
       <p>&copy; 2023</p>
     </div>
   </div>
 </footer>
+<load ="partials/policy-modal.html" />
+<load ="partials/terms-modal.html" />

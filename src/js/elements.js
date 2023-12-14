@@ -5,6 +5,7 @@ const elements = {
   nav_home: document.querySelector('.nav-home'),
   nav_favorites: document.querySelector('.nav-favorites'),
   pagination: document.querySelector('.js-pagination'),
+  subscribe_form: document.querySelector('.js-subscribe-form'),
 };
 
 export { elements };

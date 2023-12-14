@@ -67,10 +67,7 @@ class ExercisesAPI {
   }
 
   async subscribe({ email }) {
-    const response = await axios.post(
-      `${BASE_URL}subscription`,
-      { email }
-    );
+    const response = await axios.post(`${BASE_URL}subscription`, { email });
     return response.data;
   }
 }
