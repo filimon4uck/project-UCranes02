@@ -15,7 +15,10 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
-  @media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 768px) {
+  .backdrop {
     width: 430px;
     padding-left: 40px;
     padding-right: 40px;
@@ -33,11 +36,11 @@
   border: none;
   position: absolute;
   cursor: pointer;
+}
 
-  &:hover,
-  &:focus {
-    stroke: rgba(244, 244, 244, 0.4);
-  }
+.modal__close-btn:hover,
+.modal__close-btn:focus {
+  stroke: rgba(244, 244, 244, 0.4);
 }
 
 .title_rating {
@@ -62,8 +65,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .users_rating {
     margin-bottom: 32px;
   }
 }
@@ -84,13 +89,15 @@
   width: 100%;
   margin-bottom: 10px;
   color: rgba(244, 244, 244, 0.6);
+}
 
-  &:hover,
-  &:focus {
-    border: 1px solid rgba(244, 244, 244, 0.6);
-  }
+.email_field:hover,
+.email_field:focus {
+  border: 1px solid rgba(244, 244, 244, 0.6);
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .email_field {
     margin-bottom: 16px;
   }
 }
@@ -107,13 +114,15 @@
   height: 93px;
   margin-bottom: 20px;
   resize: none;
+}
 
-  &:hover,
-  &:focus {
-    border: 1px solid rgba(244, 244, 244, 0.6);
-  }
+.comment_field:hover,
+.comment_field:focus {
+  border: 1px solid rgba(244, 244, 244, 0.6);
+}
 
-  @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
+  .comment_field {
     margin-bottom: 32px;
   }
 }
@@ -128,14 +137,14 @@
   background: #f4f4f4;
   border: none;
   margin-bottom: 40px;
+}
 
-  &:hover,
-  &:focus {
-    background: #242424;
-    color: #f4f4f4;
-    border: 1px solid #f4f4f4;
-    margin-bottom: 38px;
-  }
+.btn_submit:hover,
+.btn_submit:focus {
+  background: #242424;
+  color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  margin-bottom: 38px;
 }
 
 /* radio button */
