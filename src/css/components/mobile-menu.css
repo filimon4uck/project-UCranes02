@@ -57,11 +57,14 @@
     width: 32px;
     height: 32px;
     stroke: var(--white);
+    transition: stroke var(--transition-timing);
  }
 
- .mobile-menu-close-btn:hover .close-mobile-burger-menu-icon {
+ .mobile-menu-close-btn:hover .close-mobile-burger-menu-icon,
+ .mobile-menu-close-btn:focus .close-mobile-burger-menu-icon {
     stroke: var(--white-transparent-40);
  }
+ 
 .mobile-menu-nav-wrap {
     max-width: 100%;
     display: flex;
@@ -81,7 +84,8 @@
     align-items: center;
  }
  
- .mobile-menu-nav-link:hover {
+ .mobile-menu-nav-link:hover,
+ .mobile-menu-nav-link:focus  {
     transition: opacity var(--transition-timing);
  }
 
@@ -94,5 +98,4 @@ color: var(--white-transparent-40)
     .mobile-menu-backdrop{
         display: none;
     }
-
-    }
+}
