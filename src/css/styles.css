@@ -24,5 +24,6 @@
 @import url('./components/subscribe-form.css');
 @import url('./components/pagination.css');
 @import url('./components/mobile-menu.css');
-@import url("./components/rating-modal.css");
-@import url("./components/exercise-modal.css");
+@import url('./components/rating-modal.css');
+@import url('./components/exercise-modal.css');
+@import url('./components/policy-modal.css');
