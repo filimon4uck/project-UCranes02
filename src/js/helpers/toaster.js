@@ -7,25 +7,30 @@ iziToast.settings({
   position: 'bottomCenter',
   transitionIn: 'flipInX',
   transitionOut: 'flipOutX',
+  maxWidth: 335,
+  theme: 'dark',
+  backgroundColor: '#242424',
 });
 
 function showError(message) {
   iziToast.show({
-    backgroundColor: '#E38359',
+    overlay: true,
+    overlayClose: true,
+    progressBarColor: '#BF5858',
     message,
   });
 }
 
 function showWarning(message) {
   iziToast.show({
-    backgroundColor: '#E1CB10',
+    progressBarColor: '#EEA10C',
     message,
   });
 }
 
 function showSuccess(message) {
   iziToast.show({
-    backgroundColor: '#87D662',
+    progressBarColor: '#4FAC40',
     message,
   });
 }

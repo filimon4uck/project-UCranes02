@@ -64,6 +64,7 @@
  .mobile-menu-close-btn:focus .close-mobile-burger-menu-icon  {
     stroke: var(--white-transparent-40);
  }
+ 
 .mobile-menu-nav-wrap {
     max-width: 100%;
     display: flex;
@@ -97,5 +98,4 @@ color: var(--white-transparent-40)
     .mobile-menu-backdrop{
         display: none;
     }
-
-    }
+}
