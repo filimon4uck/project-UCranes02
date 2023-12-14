@@ -17,6 +17,7 @@
 @import url('./layout/footer.css');
 @import url('./layout/favorites.css');
 @import url('./components/aside.css');
+@import url('./components/favorite-aside.css');
 @import url('./components/exercise-card.css');
 @import url('./components/gallery.css');
 @import url('./components/socials.css');
