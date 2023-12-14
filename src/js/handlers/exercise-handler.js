@@ -33,8 +33,7 @@ const handleListeners = (detailsPopupHtml, data) => {
   const ratingButton = container.querySelector('.add-rating-btn');
   const favoriteButton = container.querySelector('.add-favorites-btn');
 
-  const _ratingPopupBackdrop = document.querySelector('[data-modal]');
-  const ratingPopup = _ratingPopupBackdrop.querySelector('.modal').cloneNode(true);
+  const ratingPopup = document.querySelector('#modal-template').content.firstElementChild.cloneNode(true);
 
   const closeDetailsPopup = () => {
     popUpState.detailsPopup = false;
