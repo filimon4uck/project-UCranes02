@@ -2,7 +2,7 @@ import handleFilter from './filter-handler';
 import handleSubfilter from './subfilter-handler';
 import handleExercise from './exercise-handler';
 import handleNavigation from './navigation-handler';
-import handlerPagination from './pagination-handler';
+import handlePagination from './pagination-handler';
 import handleFavorites from './add-favorites-handler';
 
 export {
@@ -10,6 +10,6 @@ export {
   handleSubfilter,
   handleExercise,
   handleNavigation,
-  handlerPagination,
+  handlePagination,
   handleFavorites,
 };
