@@ -17,6 +17,4 @@ elements.paginationEl.addEventListener('click', handlerPagination);
 
 handleNavigation();
 renderSubfilters();
-
-
 renderQuote();

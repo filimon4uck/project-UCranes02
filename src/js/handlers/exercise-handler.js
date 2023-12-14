@@ -6,8 +6,8 @@ async function handleExercise(e) {
   if (!e.target.closest('[data-id]')) return;
 
   const exerciseId = e.target.closest('[data-id]').dataset.id;
-  const data = await exercisesApi.getExerciseById(exerciseId)
-  console.log(data)
+  const data = await exercisesApi.getExerciseById(exerciseId);
+  console.log(data);
   showSuccess(exerciseId);
 }
 
