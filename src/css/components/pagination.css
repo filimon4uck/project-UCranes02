@@ -1,3 +1,43 @@
-.a {
-    padding: 0;
+.pagination-el {
+  font-size: 20px;
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+}
+.pagination-el.active {
+  color: var(--black);
+  border-color: var(--black);
+  border-radius: 50%;
+  width: 31px;
+  height: 31px;
+}
+.pagination-el.unactive {
+  color: var(--disabled);
+}
+.js-pagination {
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+
+@media screen and (min-width: 375px) {
+  .pagination-el {
+    font-family: 'DM Sans';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.96px;
+  }
+  .pagination-el.active {
+    width: 32px;
+    height: 32px;
+  }
 }
