@@ -10,36 +10,31 @@ const popUpState = {
 
 const stopPropagation = (e) => e.stopPropagation();
 
-const getPopupElements = (markup) => {
+const handleRatingPopup = (ratingPopup, {closeCallback, submitCallback}) => {
+  const closeButton = ratingPopup.querySelector('.modal__close-btn');
+  const ratingForm = ratingPopup.querySelector('.give_a_rating');
+
+  closeButton.addEventListener('click', () => {
+    closeCallback();
+  });
+  ratingForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    submitCallback(e);
+  });
+};
+
+const handleListeners = (detailsPopupHtml, data) => {
   const container = document.createElement('div');
-  container.innerHTML = markup;
+  container.innerHTML = detailsPopupHtml;
 
   const backdrop = container.querySelector('.exercise-modal-backdrop');
   const detailsPopup = container.querySelector('.exercise-modal');
-  const detailsCloseBtn = container.querySelector('.exercise-card-close-btn');
-  const ratingBtn = container.querySelector('.add-rating-btn');
+  const detailsCloseButton = container.querySelector('.exercise-card-close-btn');
+  const ratingButton = container.querySelector('.add-rating-btn');
   const favoriteButton = container.querySelector('.add-favorites-btn');
 
   const _ratingPopupBackdrop = document.querySelector('[data-modal]');
   const ratingPopup = _ratingPopupBackdrop.querySelector('.modal').cloneNode(true);
-
-  return { backdrop, detailsPopup, detailsCloseBtn, ratingBtn, favoriteButton, ratingPopup };
-};
-
-const handleRatingPopup = (ratingPopup) => {
-  const closeButton = ratingPopup.querySelector('.modal__close-btn');
-  const ratingForm = ratingPopup.querySelector('.give_a_rating');
-};
-
-const handleListeners = (detailsPopupHtml, data) => {
-  const {
-    backdrop,
-    detailsPopup,
-    detailsCloseBtn,
-    ratingBtn,
-    favoriteButton,
-    ratingPopup,
-  } = getPopupElements(detailsPopupHtml);
 
   const closeDetailsPopup = () => {
     popUpState.detailsPopup = false;
@@ -80,11 +75,11 @@ const handleListeners = (detailsPopupHtml, data) => {
     handleBackdropClickAndEsc();
   });
   
-  detailsCloseBtn.addEventListener('click', () => {
+  detailsCloseButton.addEventListener('click', () => {
     backdrop.remove();
   });
 
-  ratingBtn.addEventListener('click', () => {
+  ratingButton.addEventListener('click', () => {
     popUpState.ratingPopup = true;
     backdrop.innerHTML = '';
     backdrop.append(ratingPopup);
@@ -94,7 +89,10 @@ const handleListeners = (detailsPopupHtml, data) => {
     handleFavorites(data);
   });
 
-  handleRatingPopup(ratingPopup, closeRatingPopup);
+  handleRatingPopup(ratingPopup, {
+    closeCallback: closeRatingPopup,
+    submitCallback: () => {},
+  });
 
   popUpState.detailsPopup = true;
   document.body.append(backdrop);
