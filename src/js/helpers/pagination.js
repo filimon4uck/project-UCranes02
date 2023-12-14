@@ -1,3 +1,4 @@
+import { elements } from '../elements';
 import paginationMarkup from '../templates/pagination-markup';
 let page = 1;
 function changePage(newPage) {
@@ -7,9 +8,7 @@ function changePage(newPage) {
     if (elementPage === newPage) {
       firstElementChild.disabled = 'true';
       firstElementChild.classList.replace('unactive', 'active');
-      console.log(firstElementChild);
     } else if (elementPage === page) {
-      console.log(firstElementChild, 'element  page === page');
       firstElementChild.classList.replace('active', 'unactive');
       firstElementChild.removeAttribute('disabled');
     }
@@ -18,6 +17,6 @@ function changePage(newPage) {
 }
 
 function renderPage(page, totalPages) {
-  paginationEl.innerHTML = paginationMarkup(page, totalPages);
+  elements.pagination.innerHTML = paginationMarkup(page, totalPages);
 }
 export { renderPage, changePage };

@@ -1,10 +1,12 @@
 import { changePage } from '../helpers/pagination';
+import { gallery } from '../services/gallery';
 
-function handlerPagination({ target }) {
-  if (!target.hasAttribute('data-page')) {
-    return;
-  }
-  changePage(parseInt(target.dataset.page));
+function handlePagination({ target }) {
+  if (!target.hasAttribute('data-page')) return;
+  
+  const page = parseInt(target.dataset.page);
+  changePage(page);
+  gallery.page = page;
 }
 
-export default handlerPagination;
+export default handlePagination;
