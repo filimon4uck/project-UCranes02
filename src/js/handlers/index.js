@@ -5,6 +5,7 @@ import handleNavigation from './navigation-handler';
 import handlePagination from './pagination-handler';
 import handleFavorites from './add-favorites-handler';
 import handleSubscribe from './subscribe-handler';
+import handlePolicyModal from './policy-handler';
 
 export {
   handleFilter,
@@ -14,4 +15,5 @@ export {
   handlePagination,
   handleFavorites,
   handleSubscribe,
+  handlePolicyModal,
 };

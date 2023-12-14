@@ -64,14 +64,11 @@
   cursor: pointer;
 }
 
-.terms span {
-  transition: color var(--transition-timing);
-}
-
-.terms span:hover,
-.terms span:focus {
-  color: #2f5131;
-  animation: shake 1s;
+.terms button {
+  background-color: transparent;
+  color: var(--white);
+  border: none;
+  outline: none;
 }
 
 @media screen and (max-width: 767px) {
