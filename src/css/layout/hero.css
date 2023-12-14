@@ -32,6 +32,10 @@
 }
 .img-hero {
   margin-bottom: 20px;
+  border-radius: 30px;
+}
+.card-cont-content {
+  padding: 16px;
 }
 .hero-list {
   display: flex;
@@ -68,6 +72,9 @@
   .icon-hero {
     width: 59px;
     height: 59px;
+  }
+  .img-hero {
+    border-radius: 60px;
   }
   .img-hero {
     width: 100%;
