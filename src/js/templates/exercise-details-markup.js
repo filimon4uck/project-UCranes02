@@ -11,7 +11,7 @@ function exerciseDetailsMarkup({
   popularity,
   _id,
 }) {
-  const newRating = Math.round(rating);
+  let newRating = Math.round(rating);
   let isId = false;
   const parsedData = JSON.parse(localStorage.getItem('favorites'));
   if (parsedData) {
@@ -32,44 +32,73 @@ function exerciseDetailsMarkup({
                 <div class="exercise-card-info">
                     <div>
                         <h2 class="exercise-card-title">${name}</h2>
-                        <div class="exercise-card-rating">
-                            <span>${newRating ? newRating + '.0' : ''}</span>
-                            ${[1, 2, 3, 4, 5]
-                              .map(i => {
-                                return `
-                            <svg aria-label="Rating star" width="16" height="16" stroke="var(--black)" fill=${
-                              newRating >= i
-                                ? 'var(--yellow)'
-                                : 'var(--white-transparent-20)'
-                            } >
-                                <use href="./img/icons.svg#icon-star"></use>
-                            </svg>`;
-                              })
-                              .join('')}
-                        </div>
+                        ${
+                          newRating
+                            ? ` <div class="exercise-card-rating"><span>${
+                                newRating ? newRating + '.0' : ''
+                              }</span>
+                        ${[1, 2, 3, 4, 5]
+                          .map(i => {
+                            return `
+                        <svg aria-label="Rating star" width="16" height="16" stroke="var(--black)" fill=${
+                          newRating >= i
+                            ? 'var(--yellow)'
+                            : 'var(--white-transparent-20)'
+                        } >
+                            <use href="./img/icons.svg#icon-star"></use>
+                        </svg>`;
+                          })
+                          .join('')}
+                          </div>`
+                            : ''
+                        }
+                            
                         <ul class="exercise-card-details-list">
-                            <li class="exercise-card-details-item">
-                                <p class="details-name">Target</p>
-                                <p class="details-value">${target}</p>
-                            </li>
-                            <li class="exercise-card-details-item">
-                                <p class="details-name">Body Part</p>
-                                <p class="details-value">${bodyPart}</p>
-                            </li>
-                            <li class="exercise-card-details-item">
-                                <p class="details-name">Equipment</p>
-                                <p class="details-value">${equipment}</p>
-                            </li>
-                            <li class="exercise-card-details-item">
-                                <p class="details-name">Popular</p>
-                                <p class="details-value">${popularity}</p>
-                            </li>
-                            <li class="exercise-card-details-item">
-                                <p class="details-name">Burned calories</p>
-                                <p class="details-value">${burnedCalories}/${time} min</p>
-                            </li>
+                        ${
+                          target
+                            ? `<li class="exercise-card-details-item">
+                        <p class="details-name">Target</p>
+                        <p class="details-value">${target}</p>
+                        </li>`
+                            : ``
+                        }
+                        ${
+                          bodyPart
+                            ? `<li class="exercise-card-details-item">
+                              <p class="details-name">Body Part</p>
+                              <p class="details-value">${bodyPart}</p>
+                          </li>`
+                            : ``
+                        }
+                          ${
+                            equipment
+                              ? `<li class="exercise-card-details-item">
+                              <p class="details-name">Equipment</p>
+                              <p class="details-value">${equipment}</p>
+                          </li>`
+                              : ``
+                          }
+                          ${
+                            popularity
+                              ? `<li class="exercise-card-details-item">
+                              <p class="details-name">Popular</p>
+                              <p class="details-value">${popularity}</p>
+                          </li>`
+                              : ``
+                          }
+                          ${
+                            burnedCalories && time
+                              ? `<li class="exercise-card-details-item">
+                              <p class="details-name">Burned calories</p>
+                              <p class="details-value">${burnedCalories}/${time} min</p>
+                          </li>`
+                              : ``
+                          }
+                         
                         </ul>
-                        <p class="exercise-card-description">${description}</p>
+                        <p class="exercise-card-description">${
+                          description ? description : ''
+                        }</p>
                     </div>
                     <div class="exercise-card-btn-group">
                         <button class="card-btn add-favorites-btn">
