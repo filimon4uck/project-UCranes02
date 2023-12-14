@@ -5,10 +5,11 @@ function changePage(newPage) {
   [...paginationEl.children].forEach(({ firstElementChild }) => {
     const elementPage = parseInt(firstElementChild.dataset.page);
     if (elementPage === newPage) {
+      firstElementChild.disabled = 'true';
       firstElementChild.classList.replace('unactive', 'active');
-      firstElementChild.setAttribute('disabled', true);
       console.log(firstElementChild);
     } else if (elementPage === page) {
+      console.log(firstElementChild, 'element  page === page');
       firstElementChild.classList.replace('active', 'unactive');
       firstElementChild.removeAttribute('disabled');
     }

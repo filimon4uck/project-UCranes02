@@ -8,10 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
+  padding: 0;
 }
 .pagination-el.active {
-  color: var(----black);
-  border: 1px solid var(--black);
+  color: var(--black);
+  border-color: var(--black);
   border-radius: 50%;
   width: 31px;
   height: 31px;
@@ -27,7 +29,6 @@
 
 @media screen and (min-width: 375px) {
   .pagination-el {
-    color: var(----black);
     font-family: 'DM Sans';
     font-size: 24px;
     font-style: normal;

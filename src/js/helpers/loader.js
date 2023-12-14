@@ -5,6 +5,5 @@ function showLoader() {
 function hideLoader() {
   loader.classList.add('hidden');
 }
-loader.classList.add('hidden');
 
 export { showLoader, hideLoader };
