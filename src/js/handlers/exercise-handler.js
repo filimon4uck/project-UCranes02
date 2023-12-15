@@ -23,6 +23,33 @@ const handleRatingPopup = (ratingPopup, {closeCallback, submitCallback}) => {
   });
 };
 
+const closeDetailsPopup = (backdrop) => {
+  popUpState.detailsPopup = false;
+  popUpState.ratingPopup = false;
+  backdrop?.remove();
+};
+
+const closeRatingPopup = (backdrop, ratingPopup, detailsPopup) => {
+  ratingPopup.remove();
+  backdrop.innerHTML = '';
+  popUpState.ratingPopup = false;
+  backdrop.append(detailsPopup);
+};
+
+const handleBackdropClickAndEsc = (backdrop, ratingPopup, detailsPopup) => {
+  switch (true) {
+    case popUpState.detailsPopup && !popUpState.ratingPopup:
+      closeDetailsPopup(backdrop);
+      return;
+    case popUpState.detailsPopup && popUpState.ratingPopup:
+      closeRatingPopup(backdrop, ratingPopup, detailsPopup);
+      return;
+    default:
+      closeDetailsPopup(backdrop);
+      return;
+  }
+};
+
 const handleListeners = (detailsPopupHtml, data) => {
   const container = document.createElement('div');
   container.innerHTML = detailsPopupHtml;
@@ -35,44 +62,17 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   const ratingPopup = document.querySelector('#modal-template').content.firstElementChild.cloneNode(true);
 
-  const closeDetailsPopup = () => {
-    popUpState.detailsPopup = false;
-    popUpState.ratingPopup = false;
-    backdrop?.remove();
-  };
-
-  const closeRatingPopup = () => {
-    ratingPopup.remove();
-    backdrop.innerHTML = '';
-    popUpState.ratingPopup = false;
-    backdrop.append(detailsPopup);
-  };
-
-  const handleBackdropClickAndEsc = () => {
-    switch (true) {
-      case popUpState.detailsPopup && !popUpState.ratingPopup:
-        closeDetailsPopup();
-        return;
-      case popUpState.detailsPopup && popUpState.ratingPopup:
-        closeRatingPopup();
-        return;
-      default:
-        closeDetailsPopup();
-        return;
-    }
-  }
-
   window.addEventListener('keydown', (e) => {
     if (e.code !== 'Escape') return;
-    handleBackdropClickAndEsc();
+    handleBackdropClickAndEsc(backdrop, ratingPopup, detailsPopup);
   });
-
-  detailsPopup.addEventListener('click', stopPropagation);
-  ratingPopup.addEventListener('click', stopPropagation);
 
   backdrop.addEventListener('click', () => {
-    handleBackdropClickAndEsc();
+    handleBackdropClickAndEsc(backdrop, ratingPopup, detailsPopup);
   });
+  
+  detailsPopup.addEventListener('click', stopPropagation);
+  ratingPopup.addEventListener('click', stopPropagation);
   
   detailsCloseButton.addEventListener('click', () => {
     backdrop.remove();
@@ -89,7 +89,7 @@ const handleListeners = (detailsPopupHtml, data) => {
   });
 
   handleRatingPopup(ratingPopup, {
-    closeCallback: closeRatingPopup,
+    closeCallback: () => closeRatingPopup(backdrop, ratingPopup, detailsPopup),
     submitCallback: () => {},
   });
 
