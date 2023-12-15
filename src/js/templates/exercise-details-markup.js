@@ -1,3 +1,7 @@
+import heartIcon from '../../img/icons.svg#icon-heart';
+import removeIcon from '../../img/icons.svg#icon-remove';
+import closeIcon from '../../img/icons.svg#icon-close';
+
 function exerciseDetailsMarkup({
   bodyPart,
   equipment,
@@ -22,7 +26,7 @@ function exerciseDetailsMarkup({
     <div class="exercise-modal">
         <button class="exercise-card-close-btn" type="button">
             <svg class="exercise-card-close-icon" aria-label="Modal window close icon">
-                <use href="/img/icons.svg#icon-close"></use>
+                <use href="${closeIcon}"></use>
             </svg>
         </button>
         <div class="exercise-card">
@@ -110,8 +114,8 @@ function exerciseDetailsMarkup({
                                 : 'Add to favorites'
                             }</span>
                             <svg class="favorites-icon" aria-label="Favorite icon" width="20" height="20" >
-                                <use href="./img/icons.svg#icon-${
-                                  isId ? 'remove' : 'heart'
+                                <use href="${
+                                  isId ? `${removeIcon}` : `${heartIcon}heart`
                                 }"></use>
                             </svg>
                         </button>
