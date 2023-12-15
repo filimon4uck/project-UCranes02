@@ -8,22 +8,22 @@ const popUpState = {
   ratingPopup: false,
 };
 
-const stopPropagation = (e) => e.stopPropagation();
+const stopPropagation = e => e.stopPropagation();
 
-const handleRatingPopup = (ratingPopup, {closeCallback, submitCallback}) => {
+const handleRatingPopup = (ratingPopup, { closeCallback, submitCallback }) => {
   const closeButton = ratingPopup.querySelector('.modal__close-btn');
   const ratingForm = ratingPopup.querySelector('.give_a_rating');
 
   closeButton.addEventListener('click', () => {
     closeCallback();
   });
-  ratingForm.addEventListener('submit', (e) => {
+  ratingForm.addEventListener('submit', e => {
     e.preventDefault();
     submitCallback(e);
   });
 };
 
-const closeDetailsPopup = (backdrop) => {
+const closeDetailsPopup = backdrop => {
   popUpState.detailsPopup = false;
   popUpState.ratingPopup = false;
   backdrop?.remove();
@@ -56,13 +56,17 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   const backdrop = container.querySelector('.exercise-modal-backdrop');
   const detailsPopup = container.querySelector('.exercise-modal');
-  const detailsCloseButton = container.querySelector('.exercise-card-close-btn');
+  const detailsCloseButton = container.querySelector(
+    '.exercise-card-close-btn'
+  );
   const ratingButton = container.querySelector('.add-rating-btn');
   const favoriteButton = container.querySelector('.add-favorites-btn');
 
-  const ratingPopup = document.querySelector('#modal-template').content.firstElementChild.cloneNode(true);
+  const ratingPopup = document
+    .querySelector('#modal-template')
+    .content.firstElementChild.cloneNode(true);
 
-  window.addEventListener('keydown', (e) => {
+  window.addEventListener('keydown', e => {
     if (e.code !== 'Escape') return;
     handleBackdropClickAndEsc(backdrop, ratingPopup, detailsPopup);
   });
@@ -70,10 +74,10 @@ const handleListeners = (detailsPopupHtml, data) => {
   backdrop.addEventListener('click', () => {
     handleBackdropClickAndEsc(backdrop, ratingPopup, detailsPopup);
   });
-  
+
   detailsPopup.addEventListener('click', stopPropagation);
   ratingPopup.addEventListener('click', stopPropagation);
-  
+
   detailsCloseButton.addEventListener('click', () => {
     backdrop.remove();
   });
@@ -84,7 +88,7 @@ const handleListeners = (detailsPopupHtml, data) => {
     backdrop.append(ratingPopup);
   });
 
-  favoriteButton.addEventListener('click', (e) => {
+  favoriteButton.addEventListener('click', e => {
     handleFavorites(data);
   });
 
@@ -95,7 +99,7 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   popUpState.detailsPopup = true;
   document.body.append(backdrop);
-}
+};
 
 async function handleExercise(e, ratingPopupCallback) {
   e.preventDefault();
@@ -108,10 +112,9 @@ async function handleExercise(e, ratingPopupCallback) {
 
     const detailsPopup = exerciseDetailsMarkup(data);
     const modalElement = handleListeners(detailsPopup, data);
-  
   } catch (err) {
     console.error(err);
-    showError("Something went wrong. Please try again later.");
+    showError('Something went wrong. Please try again later.');
   }
 }
 
