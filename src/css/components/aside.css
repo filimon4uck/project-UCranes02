@@ -64,7 +64,8 @@
 }
 
 .aside-icon-container {
-    min-width: 34px;
+    width: 34px;
+    flex-shrink: 0;
     height: 32px;
     border-radius: 50%;
     display: flex;

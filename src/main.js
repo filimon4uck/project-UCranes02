@@ -8,6 +8,7 @@ import {
   handlePagination,
   handleSubscribe,
   handlePolicyModal,
+  handleSearch,
 } from './js/handlers';
 import { gallery } from './js/services/gallery';
 
@@ -18,5 +19,15 @@ elements.pagination.addEventListener('click', handlePagination);
 elements.subscribeForm.addEventListener('submit', handleSubscribe);
 elements.policyBtn.addEventListener('click', handlePolicyModal);
 elements.termsBtn.addEventListener('click', handlePolicyModal);
+
+//Listener for Search
+import throttle from 'lodash.throttle';
+elements.searchForm.addEventListener(
+  'input',
+  throttle(handleSearch, 500, {
+    leading: false,
+    trailing: true,
+  })
+);
 
 gallery.load();

@@ -1,7 +1,7 @@
 import removeIconPath from '../../img/icons.svg#icon-remove';
 import starIconPath from '../../img/icons.svg#icon-star';
 import iconArrowPath from '../../img/icons.svg#icon-arrow';
-import iconRunningManPath from '../../img/icons.svg#icon-run-man'
+import iconRunningManPath from '../../img/icons.svg#icon-run-man';
 
 function exercisesMarkup(array, page) {
   return array

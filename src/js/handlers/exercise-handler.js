@@ -2,6 +2,7 @@ import { showSuccess, showError } from '../helpers/toaster';
 import { exercisesApi } from '../services/exercises-api';
 import { exerciseDetailsMarkup } from '../templates';
 import handleFavorites from './add-favorites-handler';
+import submitForm from '../templates/rating-modal';
 
 const popUpState = {
   detailsPopup: false,
@@ -90,7 +91,10 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   handleRatingPopup(ratingPopup, {
     closeCallback: () => closeRatingPopup(backdrop, ratingPopup, detailsPopup),
-    submitCallback: () => {},
+    submitCallback: (e) => submitForm(e, () => {
+      closeDetailsPopup(backdrop);
+      showSuccess("Thank you for your feedback!");
+    }),
   });
 
   popUpState.detailsPopup = true;
