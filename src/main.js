@@ -5,7 +5,6 @@ import {
   handleFilter,
   handleSubfilter,
   handleExercise,
-  handleNavigation,
   handlePagination,
   handleSubscribe,
 } from './js/handlers';
@@ -16,7 +15,5 @@ elements.gallery.addEventListener('click', handleSubfilter);
 elements.gallery.addEventListener('click', handleExercise);
 elements.pagination.addEventListener('click', handlePagination);
 elements.subscribe_form.addEventListener('submit', handleSubscribe);
-
-handleNavigation();
 
 gallery.load()
