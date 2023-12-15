@@ -1,8 +1,6 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const ERROR_MESSAGE='Something goes wrong!';
-
 iziToast.settings({
   timeout: 5000,
   resetOnHover: true,
@@ -37,4 +35,4 @@ function showSuccess(message) {
   });
 }
 
-export { showError, showWarning, showSuccess, ERROR_MESSAGE };
+export { showError, showWarning, showSuccess };

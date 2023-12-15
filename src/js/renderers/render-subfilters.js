@@ -2,7 +2,8 @@ import { elements } from '../elements';
 import { renderPage } from '../helpers/pagination';
 import { exercisesApi } from '../services/exercises-api';
 import { subfiltersMarkup } from '../templates';
-import { showError, ERROR_MESSAGE } from '../helpers/toaster';
+import { showError} from '../helpers/toaster';
+import { common } from '../common';
 
 async function renderSubfilters(page) {
   if (page) exercisesApi.page = page;
@@ -10,11 +11,12 @@ async function renderSubfilters(page) {
   try {
     const data = await exercisesApi.getFilters();
     elements.gallery.innerHTML = subfiltersMarkup(data.results);
+    if (!page) renderPage(Number(data.page), data.totalPages);
   } catch {
-    showError(ERROR_MESSAGE);
+    showError(common.ERROR_MESSAGE);
+    elements.gallery.innerHTML = '<p>Nothing was found<p/>'
   }
-
-  if (!page) renderPage(Number(data.page), data.totalPages);
+  
 }
 
 export default renderSubfilters;
