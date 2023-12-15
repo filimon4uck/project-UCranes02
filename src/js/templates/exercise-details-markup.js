@@ -22,7 +22,7 @@ function exerciseDetailsMarkup({
     <div class="exercise-modal">
         <button class="exercise-card-close-btn" type="button">
             <svg class="exercise-card-close-icon" aria-label="Modal window close icon">
-                <use href="./img/icons.svg#icon-close"></use>
+                <use href="/img/icons.svg#icon-close"></use>
             </svg>
         </button>
         <div class="exercise-card">
@@ -45,7 +45,7 @@ function exerciseDetailsMarkup({
                             ? 'var(--yellow)'
                             : 'var(--white-transparent-20)'
                         } >
-                            <use href="./img/icons.svg#icon-star"></use>
+                            <use href="/img/icons.svg#icon-star"></use>
                         </svg>`;
                           })
                           .join('')}
