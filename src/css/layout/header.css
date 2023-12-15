@@ -17,7 +17,7 @@
 .logo-icon {
   width: 132px;
   height: 24px;
-  stroke: var( --black);
+  stroke: var(--black);
 }
 
 .nav {
@@ -39,7 +39,7 @@
 .mobile-menu-open-btn-icon {
   width: 32px;
   height: 32px;
-  stroke: var( --black);
+  stroke: var(--black);
 }
 
 @media screen and (min-width: 768px) {
@@ -74,14 +74,13 @@
     line-height: 1.5;
   }
 
-  .active-item {
+  .home-page .nav-home,
+  .favorites-page .nav-favorites {
     border-radius: 30px;
     background: var(--white);
     color: var(--black);
-    padding: 6px 12px;
     flex-shrink: 0;
   }
-
 }
 
 @media screen and (min-width: 1440px) {
@@ -101,6 +100,10 @@
     justify-content: center;
     width: 265px;
     margin-left: 423px;
+  }
 }
 
+.nav-link {
+  padding: 6px 12px;
+  display: block;
 }
