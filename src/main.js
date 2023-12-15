@@ -17,6 +17,7 @@ elements.gallery.addEventListener('click', handleExercise);
 elements.pagination.addEventListener('click', handlePagination);
 elements.subscribe_form.addEventListener('submit', handleSubscribe);
 
+
 //Listener for Search
 import throttle from 'lodash.throttle';
 elements.searchForm.addEventListener(
@@ -26,6 +27,5 @@ elements.searchForm.addEventListener(
     trailing: true,
   })
 );
-//
 
 gallery.load();
