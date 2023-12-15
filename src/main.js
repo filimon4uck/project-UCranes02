@@ -16,4 +16,4 @@ elements.gallery.addEventListener('click', handleExercise);
 elements.pagination.addEventListener('click', handlePagination);
 elements.subscribe_form.addEventListener('submit', handleSubscribe);
 
-gallery.load()
+gallery.load();
