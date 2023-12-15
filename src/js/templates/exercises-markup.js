@@ -1,3 +1,8 @@
+import removeIconPath from '../../img/icons.svg#icon-remove';
+import starIconPath from '../../img/icons.svg#icon-star';
+import iconArrowPath from '../../img/icons.svg#icon-arrow';
+import iconRunningManPath from '../../img/icons.svg#icon-run-man'
+
 function exercisesMarkup(array, page) {
   return array
     .map(
@@ -15,7 +20,7 @@ function exercisesMarkup(array, page) {
                 ? `
                 <button class="btn-delete-card" type="button">
                 <svg class="icon-delete-favorite" width="16" height="16">
-                  <use href="./img/icons.svg#icon-remove"></use>
+                  <use href="${removeIconPath}"></use>
                 </svg>
                 </button>
                 
@@ -24,7 +29,7 @@ function exercisesMarkup(array, page) {
                 <div class="cont-card-rating">
                   <p class="card-rating-exer">${rating}</p>
                   <svg class="icon-card-exer" width="18" height="18">
-                    <use href="./img/icons.svg#icon-star"></use>
+                    <use href="${starIconPath}"></use>
                   </svg>
                 </div>
               `
@@ -32,14 +37,14 @@ function exercisesMarkup(array, page) {
             <div class="block-btn-icon-exer">
               <button class="btn-card-exer">Start</button>
               <svg class="icon-card-btn" width="16" height="16">
-                <use href="./img/icons.svg#icon-arrow"></use>
+                <use href="${iconArrowPath}"></use>
               </svg>
             </div>
           </div>
           <!-- Middle place card -->
           <div class="cont-icon-name-text">
             <svg class="icon-people-card" width="24" height="24">
-              <use href="./img/icons.svg#icon-run-man"></use>
+              <use href="${iconRunningManPath}"></use>
             </svg>
             <p class="text-name-exercises-card">${name}</p>
           </div>
