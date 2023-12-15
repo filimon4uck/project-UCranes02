@@ -4,7 +4,6 @@ import handleExercise from './exercise-handler';
 import handlePagination from './pagination-handler';
 import handleFavorites from './add-favorites-handler';
 import handleSubscribe from './subscribe-handler';
-import removeFavorites from './remove-favorites-handler';
 
 export {
   handleFilter,
@@ -13,5 +12,4 @@ export {
   handlePagination,
   handleFavorites,
   handleSubscribe,
-  removeFavorites,
 };
