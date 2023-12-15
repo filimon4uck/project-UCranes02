@@ -3,7 +3,7 @@
   opacity: 0;
   pointer-events: none;
 }
-.backdrop {
+.modal {
   z-index: 9999;
   width: 335px;
   border-radius: 20px;
