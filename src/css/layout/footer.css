@@ -69,6 +69,7 @@
   color: var(--white);
   border: none;
   outline: none;
+  padding: 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -101,7 +102,7 @@
   }
 
   .slogan {
-    max-width: 432px;
+    max-width: 434px;
     font-size: 56px;
     line-height: 1.07;
 
@@ -109,7 +110,7 @@
   }
 
   .terms-wrapper {
-    gap: 88px;
+    gap: 70px;
   }
 }
 
@@ -128,7 +129,7 @@
   }
 
   .terms-wrapper {
-    gap: 130px;
+    gap: 115px;
   }
 
   .footer-bottom {
