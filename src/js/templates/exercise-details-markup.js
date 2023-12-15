@@ -101,7 +101,9 @@ function exerciseDetailsMarkup({
                         }</p>
                     </div>
                     <div class="exercise-card-btn-group">
-                        <button class="card-btn add-favorites-btn">
+                        <button class="card-btn add-favorites-btn" ${
+                          isId ? `style="padding: 12px 9px"` : ''
+                        }>
                             <span>${
                               isId
                                 ? 'Remove from favorites'
