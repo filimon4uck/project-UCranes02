@@ -4,11 +4,11 @@ let closeBtn;
 let modal;
 
 function handlePolicyModal(e) {
-  if (e.target === elements.policy_modal_open) {
+  if (e.target === elements.policyBtn) {
     modal = document.querySelector('.js-policy-modal');
     closeBtn = document.querySelector('.js-policy-modal-close');
   }
-  if (e.target === elements.terms_modal_open) {
+  if (e.target === elements.termsBtn) {
     modal = document.querySelector('.js-terms-modal');
     closeBtn = document.querySelector('.js-terms-modal-close');
   }

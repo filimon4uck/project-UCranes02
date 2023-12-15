@@ -16,9 +16,9 @@ elements.filter.addEventListener('click', handleFilter);
 elements.gallery.addEventListener('click', handleSubfilter);
 elements.gallery.addEventListener('click', handleExercise);
 elements.pagination.addEventListener('click', handlePagination);
-elements.subscribe_form.addEventListener('submit', handleSubscribe);
-elements.policy_modal_open.addEventListener('click', handlePolicyModal);
-elements.terms_modal_open.addEventListener('click', handlePolicyModal);
+elements.subscribeForm.addEventListener('submit', handleSubscribe);
+elements.policyBtn.addEventListener('click', handlePolicyModal);
+elements.termsBtn.addEventListener('click', handlePolicyModal);
 
 handleNavigation();
 
