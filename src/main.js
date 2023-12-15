@@ -5,7 +5,6 @@ import {
   handleFilter,
   handleSubfilter,
   handleExercise,
-  handleNavigation,
   handlePagination,
   handleSubscribe,
   handlePolicyModal,
@@ -19,7 +18,5 @@ elements.pagination.addEventListener('click', handlePagination);
 elements.subscribeForm.addEventListener('submit', handleSubscribe);
 elements.policyBtn.addEventListener('click', handlePolicyModal);
 elements.termsBtn.addEventListener('click', handlePolicyModal);
-
-handleNavigation();
 
 gallery.load();

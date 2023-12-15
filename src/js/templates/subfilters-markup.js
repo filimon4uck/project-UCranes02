@@ -5,8 +5,8 @@ function subfiltersMarkup(array) {
         filter,
         name,
         imgURL,
-      }) => `<li data-subfilter="${name}" class="exercises-item">
-      <a class="exercises-item-container" href="">
+      }) => `<li class="exercises-item">
+      <a data-subfilter="${name}" class="exercises-item-container" href="">
         <img class="exercises-item-image" src="${imgURL}" alt="${name}" />
         <div class="exercises-proprties-container">
           <h4 class="exercises-item-name">${name}</h4>
