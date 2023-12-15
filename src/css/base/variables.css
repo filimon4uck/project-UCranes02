@@ -1,6 +1,7 @@
 :root {
     --black: #242424;
     --black-transparent-60: rgba(36, 36, 36, 0.6);
+    --black-transparent-50: rgba(36, 36, 36, 0.5);
     --black-transparent-40: rgba(36, 36, 36, 0.4);
     --black-transparent-10: rgba(36, 36, 36, 0.1);
     
