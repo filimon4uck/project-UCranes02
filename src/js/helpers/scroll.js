@@ -5,4 +5,3 @@ function scrollToTopOrElement(target) {
     target.scrollIntoView({ behavior: 'smooth' });
   }
 }
-export default scrollToTopOrElement;
