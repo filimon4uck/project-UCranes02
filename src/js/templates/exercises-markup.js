@@ -1,4 +1,4 @@
-function exercisesMarkup(array) {
+function exercisesMarkup(array, page) {
   return array
     .map(
       ({ _id, bodyPart, name, target, rating, burnedCalories, time }) => `
@@ -10,19 +10,25 @@ function exercisesMarkup(array) {
             <div class="const-text-exer">
               <p class="text-card-exer">WORKOUT</p>
             </div>
-            <svg
-              class="icon-delete-favorite visually-hidden"
-              width="16"
-              height="16"
-            >
-              <use href="/img/icons.svg#icon-remove"></use>
-            </svg>
-            <div class="cont-card-rating">
-              <p class="card-rating-exer">${rating}</p>
-              <svg class="icon-card-exer" width="18" height="18">
-                <use href="img/icons.svg#icon-star"></use>
-              </svg>
-            </div>
+            ${
+              page === 'favorites'
+                ? `
+                <button class="btn-delete-card" type="button">
+                <svg class="icon-delete-favorite" width="16" height="16">
+                  <use href="/img/icons.svg#icon-remove"></use>
+                </svg>
+                </button>
+                
+              `
+                : `
+                <div class="cont-card-rating">
+                  <p class="card-rating-exer">${rating}</p>
+                  <svg class="icon-card-exer" width="18" height="18">
+                    <use href="img/icons.svg#icon-star"></use>
+                  </svg>
+                </div>
+              `
+            }
             <div class="block-btn-icon-exer">
               <button class="btn-card-exer">Start</button>
               <svg class="icon-card-btn" width="16" height="16">
