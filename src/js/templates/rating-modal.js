@@ -15,6 +15,6 @@ export default async function submitForm(e, onSuccess) {
     onSuccess();
   } catch (error) {
     console.log(error);
-    showError();
+    showError("Something went wrong. Please try again later.");
   }
 }
