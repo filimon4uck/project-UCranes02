@@ -1,6 +1,6 @@
-.aside {
+/* .aside {
     padding-top: 80px;
-}
+} */
 
 .aside-list {
     display: flex;
@@ -118,9 +118,9 @@ screen and (min-device-pixel-ratio: 2) {
 
 @media screen and (min-width: 768px) {
 
-    .aside {
+    /* .aside {
         padding-top: 64px;
-    }
+    } */
 
 
     .aside-list {
