@@ -3,6 +3,7 @@ import { exercisesApi } from '../services/exercises-api';
 import { exerciseDetailsMarkup } from '../templates';
 import handleFavorites from './add-favorites-handler';
 import submitForm from '../templates/rating-modal';
+import handleSetRating  from './rating-select-handler';
 
 const popUpState = {
   detailsPopup: false,
@@ -14,6 +15,11 @@ const stopPropagation = (e) => e.stopPropagation();
 const handleRatingPopup = (ratingPopup, {closeCallback, submitCallback}) => {
   const closeButton = ratingPopup.querySelector('.modal__close-btn');
   const ratingForm = ratingPopup.querySelector('.give_a_rating');
+  const ratingFieldset = ratingPopup.querySelector('.rating');
+
+  ratingFieldset.addEventListener('click', (e) => {
+    handleSetRating(e);
+  });
 
   closeButton.addEventListener('click', () => {
     closeCallback();
