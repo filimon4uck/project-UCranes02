@@ -97,8 +97,9 @@ class Gallery {
         exercisesApi.subFilter = this.#subfilter;
         exercisesApi.keyword = this.#searchQuery;
         exercisesApi.page = this.#exercisesPage;
-        elements.searchForm.elements.exercise.value = this.#searchQuery;
-        console.log(elements.searchForm.elements.exercise.value);
+
+        elements.searchForm.elements.exercise.setAttribute("value", this.#searchQuery);
+
         renderExercises(renderPagination);
         this.#showExercisesGallery(this.#subfilter);
         break;
