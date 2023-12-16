@@ -1,4 +1,4 @@
-import { changePage } from '../helpers/pagination';
+// import { changePage } from '../helpers/pagination';
 import { gallery } from '../services/gallery';
 
 function handlePagination({ target }) {
