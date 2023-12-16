@@ -17,20 +17,22 @@ async function renderQuote() {
 
             try {
                 quote = await exercisesApi.getQuote();
-                
-                if (!quote.author || !quote.quote) {
-                    throw Error("empty data")
-                }
+
+                quote.quote = quote.quote || common.BASE_QUOTE.quote;
+                quote.author = quote.author || "Unknown"
 
             } catch (error) {
                 elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(common.BASE_QUOTE))
-                console.log(error.message);
                 return;
             }
 
-            quote.date = today;
-            localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
+           if (quote.author !== "Unknown" && quote.quote !== common.BASE_QUOTE.quote) {
+                quote.date = today;
+                localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
+            }
+
             elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(quote))
+
         } else {
             elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(parseQuote))
         }
@@ -39,19 +41,20 @@ async function renderQuote() {
 
          try {
                 quote = await exercisesApi.getQuote();
-                
-                if (!quote.author || !quote.quote) {
-                    throw Error("empty data")
-                }
+             
+                quote.quote = quote.quote || common.BASE_QUOTE.quote;
+                quote.author = quote.author || "Unknown"
 
             } catch (error) {
                 elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(common.BASE_QUOTE))
-                console.log(error.message);
                 return;
             }
-
-        quote.date = today;
-        localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
+        
+        if (quote.author !== "Unknown" && quote.quote !== common.BASE_QUOTE.quote) {
+            quote.date = today;
+            localStorage.setItem(common.LS_KEY_QUOTE, JSON.stringify(quote))
+        }
+    
         elements.quote.insertAdjacentHTML("beforeend", quoteMarkup(quote))
     }
 
