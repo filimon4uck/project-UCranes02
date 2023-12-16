@@ -1,9 +1,10 @@
 import 'modern-normalize';
 
-import exercisesMarkup from './js/templates/exercises-markup';
 import { elements } from './js/elements';
-import { common } from './js/common';
+import { renderFavorites } from './js/renderers';
+import handleFavoritePagination from './js/handlers/favorites-pagination-handler';
 
-const cards = JSON.parse(localStorage.getItem(common.LS_KEY_FAVORITES))  ?? [];
+elements.pagination.addEventListener('click', handleFavoritePagination)
 
-elements.gallery.innerHTML = exercisesMarkup(cards, 'favorites')
+renderFavorites()
+

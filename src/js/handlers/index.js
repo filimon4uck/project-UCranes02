@@ -8,6 +8,7 @@ import handlePolicyModal from './policy-handler';
 import handleSearch from './search-form-handler';
 import { handleScrollTop, handleScrollTopBtnShow } from './scrollTop-handlers';
 import handleBackButton from './back-button-handler';
+import handleFavoritePagination from './favorites-pagination-handler';
 
 export {
   handleFilter,
@@ -21,4 +22,5 @@ export {
   handleScrollTop,
   handleScrollTopBtnShow,
   handleBackButton,
+  handleFavoritePagination
 };
