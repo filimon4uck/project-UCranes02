@@ -1,9 +1,9 @@
+import 'modern-normalize';
+
 import exercisesMarkup from './js/templates/exercises-markup';
 import { elements } from './js/elements';
-const LS_card = JSON.parse(localStorage.getItem('favorites'));
-console.log(LS_card);
+import { common } from './js/common';
 
-elements.gallery.insertAdjacentHTML(
-  'beforeend',
-  exercisesMarkup(LS_card, 'favorites')
-);
+const cards = JSON.parse(localStorage.getItem(common.LS_KEY_FAVORITES))  ?? [];
+
+elements.gallery.innerHTML = exercisesMarkup(cards, 'favorites')

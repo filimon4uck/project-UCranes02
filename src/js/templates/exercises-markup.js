@@ -18,7 +18,7 @@ function exercisesMarkup(array, page) {
             ${
               page === 'favorites'
                 ? `
-                <button class="btn-delete-card" type="button">
+                <button class="btn-delete-card" type="button" data-delete="${_id}">
                 <svg class="icon-delete-favorite" width="16" height="16">
                   <use href="${removeIconPath}"></use>
                 </svg>

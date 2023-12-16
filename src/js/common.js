@@ -1,5 +1,6 @@
 const common = {
   SS_KEY_FILTERS: 'user filters',
+  LS_KEY_FAVORITES: 'favorites',
   LS_KEY_QUOTE: 'quote',
   BASE_QUOTE: {
     author: 'Tom Brady',
