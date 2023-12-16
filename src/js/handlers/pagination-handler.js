@@ -6,7 +6,7 @@ function handlePagination({ target }) {
   
   const page = parseInt(target.dataset.page);
   changePage(page);
-  gallery.page = page;
+  gallery.changePage(page);
 }
 
 export default handlePagination;

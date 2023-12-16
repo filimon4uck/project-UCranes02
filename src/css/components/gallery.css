@@ -28,17 +28,17 @@
     row-gap: 32px;
   }
 
-  .gallery-list-subfilters {
+  .gallery-list[data-cards="subfilters"] {
     column-gap: 15px;
   }
 
-  .gallery-list-exercises {
+  .gallery-list[data-cards="exercises"] {
     column-gap: 16px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .gallery-list-subfilters {
+  .gallery-list[data-cards="subfilters"] {
     margin-right: -1px;
     margin-left: -1px;
   }

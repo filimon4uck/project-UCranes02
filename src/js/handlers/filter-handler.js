@@ -4,10 +4,7 @@ import { gallery } from '../services/gallery';
 
 function handleFilter(e) {
   if (!e.target.hasAttribute('data-filter')) return;
-  exercisesApi.filter = e.target.dataset.filter;
-  exercisesApi.page = 1;
-  gallery.state = 'subfilters';
-  renderSubfilters();
+  gallery.changeFilter(e.target.dataset.filter);
 }
 
 export default handleFilter;
