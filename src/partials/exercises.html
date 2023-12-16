@@ -7,6 +7,7 @@
           <!-- <span class="exercises-title">&nbsp;/</span>
           <h3 class="exercises-subtitle">Waist</h3> -->
         </div>
+        <button class="js-back-button back-button back-button-hidden" type='button'>Go back</button>
       </div>
       <div class="exercises-filters">
         <load ="partials/search-form.html" />
@@ -35,7 +36,7 @@
     </div>
     <div class="exercises-body">
       <div class="gallery-box">
-        <ul class="js-gallery gallery-list gallery-list-subfilters"></ul>
+        <ul data-cards="subfilters" class="js-gallery gallery-list"></ul>
         <ul class="js-pagination"></ul>
       </div>
       <load ="partials/aside.html" />

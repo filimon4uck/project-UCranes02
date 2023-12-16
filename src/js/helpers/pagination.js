@@ -1,6 +1,7 @@
 import { elements } from '../elements';
 import paginationMarkup from '../templates/pagination-markup';
 let page = 1;
+
 function changePage(newPage) {
   const paginationEl = document.querySelector('.js-pagination');
   [...paginationEl.children].forEach(({ firstElementChild }) => {
@@ -16,7 +17,8 @@ function changePage(newPage) {
   page = newPage;
 }
 
-function renderPage(page, totalPages) {
+function renderPagination(page, totalPages) {
   elements.pagination.innerHTML = paginationMarkup(page, totalPages);
 }
-export { renderPage, changePage };
+
+export { renderPagination, changePage };
