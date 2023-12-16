@@ -1,5 +1,4 @@
 export default function handleSetRating (e) {
-    // debugger;
     const rating = e.target.closest('.rating');
     if (!rating) return;
 
