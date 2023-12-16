@@ -1,15 +1,14 @@
 import { elements } from '../elements';
-import { renderPage } from '../helpers/pagination';
 import { exercisesApi } from '../services/exercises-api';
 import { exercisesMarkup } from '../templates';
 
-async function renderExercises(page) {
-  if (page) exercisesApi.page = page;
+async function renderExercises(page, pagination) {
+  exercisesApi.page = page;
 
   const data = await exercisesApi.getExercises();
   elements.gallery.innerHTML = exercisesMarkup(data.results);
 
-  if (!page) renderPage(Number(data.page), data.totalPages);
+  if (pagination) pagination(Number(data.page), data.totalPages);
 }
 
 export default renderExercises;

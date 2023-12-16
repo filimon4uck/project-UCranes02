@@ -7,6 +7,7 @@ import handleSubscribe from './subscribe-handler';
 import handlePolicyModal from './policy-handler';
 import handleSearch from './search-form-handler';
 import { handleScrollTop, handleScrollTopBtnShow } from './scrollTop-handlers';
+import handleBackButton from './back-button-handler';
 
 export {
   handleFilter,
@@ -19,4 +20,5 @@ export {
   handleSearch,
   handleScrollTop,
   handleScrollTopBtnShow,
+  handleBackButton,
 };
