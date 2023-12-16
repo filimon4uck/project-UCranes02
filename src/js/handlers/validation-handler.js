@@ -41,7 +41,7 @@ function validate({rate, email, review}) {
       errors.rate = 'Please select a rating';
     case !email:
       errors.isInvalid = true;
-      errors.email = 'Please enter email';
+      errors.email = 'Please enter an email';
     case !emailRegexp.test(email):
       errors.isInvalid = true;
       errors.email = 'Please enter a valid email';
