@@ -9,6 +9,8 @@ import {
   handleSubscribe,
   handlePolicyModal,
   handleSearch,
+  handleScrollTop,
+  handleScrollTopBtnShow,
 } from './js/handlers';
 import { gallery } from './js/services/gallery';
 
@@ -19,7 +21,8 @@ elements.pagination.addEventListener('click', handlePagination);
 elements.subscribeForm.addEventListener('submit', handleSubscribe);
 elements.policyBtn.addEventListener('click', handlePolicyModal);
 elements.termsBtn.addEventListener('click', handlePolicyModal);
-
+window.addEventListener('scroll', handleScrollTopBtnShow);
+elements.scrollTopBtn.addEventListener('click', handleScrollTop);
 //Listener for Search
 import throttle from 'lodash.throttle';
 elements.searchForm.addEventListener(

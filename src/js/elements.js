@@ -8,6 +8,7 @@ const elements = {
   quote: document.querySelector('.js-quote'),
   policyBtn: document.querySelector('.js-policy-modal-open'),
   termsBtn: document.querySelector('.js-terms-modal-open'),
+  scrollTopBtn: document.querySelector('.js-scroll-top-button'),
 };
 
 export { elements };
