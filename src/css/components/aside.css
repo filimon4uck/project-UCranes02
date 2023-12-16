@@ -87,7 +87,7 @@
     border-radius: 20px;
     background-image: url("../../img/home/home-mobile.jpg");
     background-repeat: no-repeat;
-    background-size: covero;
+    background-size: cover;
 }
 
 @media screen and (min-resolution: 192dpi),
