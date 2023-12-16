@@ -16,6 +16,7 @@
   opacity: 0;
   transform: translateY(-25px);
   transition: 0.2s;
+  visibility: hidden;
   /* position: absolute;
   width: 1px;
   height: 1px;
@@ -40,6 +41,7 @@
 }
 
 .js-scroll-top-button-active {
+  visibility: visible;
   opacity: 1;
   transform: translateY(0);
 }
