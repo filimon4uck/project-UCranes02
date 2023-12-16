@@ -9,7 +9,7 @@ function scrollToTopOrElement(target) {
   if (target === 'top') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    const element = document.querySelector(target);
+    const element = target;
     if (element) {
       const elementRect = element.getBoundingClientRect();
       if (
@@ -17,6 +17,7 @@ function scrollToTopOrElement(target) {
         elementRect.bottom <=
           (window.innerHeight || document.documentElement.clientHeight)
       ) {
+        console.log('el is in viewport');
         return;
       }
       window.scrollBy({
