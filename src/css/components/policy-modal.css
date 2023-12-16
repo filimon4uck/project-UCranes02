@@ -28,7 +28,7 @@
   height: auto;
   max-height: 90vh;
   padding: 24px 0;
-  border-radius: 12px;
+  border-radius: 20px;
   background-color: var(--black);
   transition: transform var(--transition-timing);
 }
