@@ -22,28 +22,34 @@
           <input type="radio" id="star1" name="rate" value="1" />
           <label for="star1"></label>
         </fieldset>
+        <p class="error"></p>
       </div>
 
-      <input
-        class="email_field"
-        type="email"
-        name="email"
-        class="email__input"
-        id="user_email_up"
-        required=""
-        placeholder="Email"
-      />
-
-      <input
-        class="comment_field"
-        type="text"
-        name="review"
-        class="comment__input"
-        id="user_comment"
-        required=""
-        placeholder="Your comment"
-        autocomplete="off"
-      />
+      <lable>
+        <input
+          class="email_field"
+          type="email"
+          name="email"
+          class="email__input"
+          id="user_email_up"
+          required=""
+          placeholder="Email"
+        />
+        <p class="error"></p>
+      </lable>
+      <label>
+        <textarea
+          class="comment_field"
+          type="text"
+          name="review"
+          class="comment__input"
+          id="user_comment"
+          required=""
+          placeholder="Your comment"
+          autocomplete="off"
+        ></textarea>
+        <p class="error"></p>
+      </label>
       <button class="btn_submit" type="submit">Send</button>
 
       <div class="rating_send_btn"></div>

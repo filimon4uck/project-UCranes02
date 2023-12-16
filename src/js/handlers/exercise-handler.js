@@ -2,7 +2,7 @@ import { showSuccess, showError } from '../helpers/toaster';
 import { exercisesApi } from '../services/exercises-api';
 import { exerciseDetailsMarkup } from '../templates';
 import handleFavorites from './add-favorites-handler';
-import submitForm from '../templates/rating-modal';
+import submitForm from './rating-modal-handler';
 import handleSetRating  from './rating-select-handler';
 
 const popUpState = {
@@ -16,6 +16,8 @@ const handleRatingPopup = (ratingPopup, {closeCallback, submitCallback}) => {
   const closeButton = ratingPopup.querySelector('.modal__close-btn');
   const ratingForm = ratingPopup.querySelector('.give_a_rating');
   const ratingFieldset = ratingPopup.querySelector('.rating');
+
+  ratingForm.setAttribute('novalidate', true);
 
   ratingFieldset.addEventListener('click', (e) => {
     handleSetRating(e);
@@ -34,6 +36,7 @@ const closeDetailsPopup = (backdrop) => {
   popUpState.detailsPopup = false;
   popUpState.ratingPopup = false;
   backdrop?.remove();
+  document.documentElement.classList.remove('no-scroll');
 };
 
 const closeRatingPopup = (backdrop, ratingPopup, detailsPopup) => {
@@ -103,6 +106,7 @@ const handleListeners = (detailsPopupHtml, data) => {
     }),
   });
 
+  document.documentElement.classList.add('no-scroll');
   popUpState.detailsPopup = true;
   document.body.append(backdrop);
 }
