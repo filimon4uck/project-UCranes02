@@ -1,6 +1,8 @@
-import removeFavorites from '../helpers/favorites/remove-favorites-handler';
+import removeFavorites from '../helpers/favorites/remove-favorites';
 import heartIcon from '../../img/icons.svg#icon-heart';
 import removeIcon from '../../img/icons.svg#icon-remove';
+import { renderFavorites } from '../renderers';
+import { elements } from '../elements';
 
 function handleFavorites(data) {
   const favorite = document.querySelector('.add-favorites-btn');
@@ -22,6 +24,9 @@ function handleFavorites(data) {
   } else {
     const firstData = JSON.stringify([data]);
     localStorage.setItem('favorites', firstData);
+  }
+  if (elements.body.dataset.page === 'favorites') {
+    renderFavorites();
   }
 }
 
