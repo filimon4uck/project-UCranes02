@@ -5,7 +5,6 @@ function handlePagination({ target }) {
   if (!target.hasAttribute('data-page')) return;
   
   const page = parseInt(target.dataset.page);
-  changePage(page);
   gallery.changePage(page);
 }
 
