@@ -13,6 +13,7 @@ export default async function submitForm(e, onSuccess) {
   };
 
   const validarionResult = validate(data);
+
   handleValidationErrors(validarionResult, e.target);
   if (validarionResult.isInvalid) return;
 
