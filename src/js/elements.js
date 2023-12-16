@@ -1,4 +1,5 @@
 const elements = {
+  body: document.querySelector('body'),
   burger: document.querySelector('.js-burger'),
   filter: document.querySelector('.js-filter'),
   gallery: document.querySelector('.js-gallery'),

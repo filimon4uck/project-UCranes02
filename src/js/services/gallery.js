@@ -1,11 +1,22 @@
+import throttle from 'lodash.throttle';
+
 import { elements } from '../elements';
 import { renderExercises, renderQuote, renderSubfilters } from '../renderers';
 import { exercisesApi } from './exercises-api';
 import { renderPagination } from '../helpers/pagination';
-import { handleSearch } from '../handlers';
-import { handleBackButton } from '../handlers';
+import {
+  handleBackButton,
+  handleExercise,
+  handleFilter,
+  handlePagination,
+  handlePolicyModal,
+  handleSearch,
+  handleSubfilter,
+  handleSubscribe,
+} from '../handlers';
 import scrollToTopOrElement from '../helpers/scroll';
 import { getDeviseType } from '../helpers/screen-resolution';
+import { common } from '../common';
 
 class Gallery {
   #state;
@@ -35,8 +46,8 @@ class Gallery {
   }
 
   #saveStats() {
-    localStorage.setItem(
-      'gallery',
+    sessionStorage.setItem(
+      common.SS_KEY_FILTERS,
       JSON.stringify({
         state: this.#state,
         filter: this.#filter,
@@ -54,8 +65,16 @@ class Gallery {
     elements.searchForm.classList.remove('search-form-hidden');
     elements.gallerySubtitle.innerHTML = `<span class="exercises-title">&nbsp;/</span><h3 class="exercises-subtitle">${subfilter}</h3>`;
 
+    elements.gallery.addEventListener('click', handleExercise);
     elements.backBtn.addEventListener('click', handleBackButton);
-    elements.searchForm.addEventListener('click', handleSearch);
+    elements.searchForm.addEventListener(
+      'input',
+      throttle(handleSearch, 1000, {
+        leading: false,
+        trailing: true,
+      })
+    );
+    elements.gallery.removeEventListener('click', handleSubfilter);
     elements.searchForm.reset();
   }
 
@@ -65,8 +84,16 @@ class Gallery {
     elements.searchForm.classList.add('search-form-hidden');
     elements.gallerySubtitle.innerHTML = '';
 
-    elements.backBtn.removeEventListener('click', this.goBack);
-    elements.searchForm.removeEventListener('click', handleSearch);
+    elements.gallery.addEventListener('click', handleSubfilter);
+    elements.gallery.removeEventListener('click', handleExercise);
+    elements.backBtn.removeEventListener('click', handleBackButton);
+    elements.searchForm.removeEventListener(
+      'input',
+      throttle(handleSearch, 1000, {
+        leading: false,
+        trailing: true,
+      })
+    );
   }
 
   #setFilterActive(newFilter, prevFilter) {
@@ -98,14 +125,25 @@ class Gallery {
         exercisesApi.keyword = this.#searchQuery;
         exercisesApi.page = this.#exercisesPage;
 
-        elements.searchForm.elements.exercise.setAttribute("value", this.#searchQuery);
+        // elements.searchForm.elements.exercise.setAttribute(
+        //   'value',
+        //   this.#searchQuery
+        // );
 
         renderExercises(renderPagination);
         this.#showExercisesGallery(this.#subfilter);
         break;
     }
 
-    this.#setFilterActive(this.#filter);
+    elements.pagination.addEventListener('click', handlePagination);
+
+    if (elements.body.dataset.page === 'home') {
+      this.#setFilterActive(this.#filter);
+      elements.filter.addEventListener('click', handleFilter);
+      elements.subscribeForm.addEventListener('submit', handleSubscribe);
+      elements.policyBtn.addEventListener('click', handlePolicyModal);
+      elements.termsBtn.addEventListener('click', handlePolicyModal);
+    }
   }
 
   changeFilter(newFilter) {
@@ -203,7 +241,7 @@ class Gallery {
 }
 
 const gallery = new Gallery({
-  ...(JSON.parse(localStorage.getItem('gallery')) ?? {
+  ...(JSON.parse(sessionStorage.getItem(common.SS_KEY_FILTERS)) ?? {
     state: 'subfilters',
     filter: 'muscles',
     subfiltersPage: 1,
