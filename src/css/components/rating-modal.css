@@ -15,10 +15,12 @@
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+  transition: opacity var(--transition-timing),
+    visibility var(--transition-timing);
 }
 
 @media screen and (min-width: 768px) {
-  .backdrop {
+  .modal {
     width: 430px;
     padding-left: 40px;
     padding-right: 40px;
@@ -36,6 +38,7 @@
   border: none;
   position: absolute;
   cursor: pointer;
+  transition: stroke var(--transition-timing);
 }
 
 .modal__close-btn:hover,
@@ -88,6 +91,14 @@
   height: 42px;
   width: 100%;
   color: rgba(244, 244, 244, 0.6);
+  margin-bottom: 3px;
+  transition: stroke var(--transition-timing);
+}
+
+@media screen and (min-width: 768px) {
+  .email_field {
+    height: 48px;
+  }
 }
 
 .email_field:hover,
@@ -106,9 +117,9 @@
   border: 1px solid #f4f4f4;
   width: 100%;
   height: 93px;
-  margin-bottom: 20px;
   resize: none;
-  margin-top: 20px;
+  margin-top: 15px;
+  transition: stroke var(--transition-timing);
 }
 
 .comment_field:hover,
@@ -119,20 +130,25 @@
 
 @media screen and (min-width: 768px) {
   .comment_field {
-    margin-bottom: 32px;
+    padding: 12px 14px 70px 14px;
+    height: 106px;
+    margin-top: 21px;
   }
 }
 
 .btn_submit {
   display: flex;
   width: 100%;
+  height: 42px;
   padding: 12px 131px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
   background: #f4f4f4;
   border: none;
+  margin-top: 20px;
   margin-bottom: 40px;
+  transition: background-color, color var(--transition-timing);
 }
 
 .btn_submit:hover,
@@ -140,8 +156,41 @@
   background: #242424;
   color: #f4f4f4;
   border: 1px solid #f4f4f4;
-  margin-bottom: 38px;
+  margin-bottom: 40px;
   outline: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .btn_submit {
+    height: 48px;
+    margin-top: 32px;
+  }
+}
+
+.error {
+  color: #f16b6b;
+  font-size: 12px;
+  position: absolute;
+}
+
+.error-email {
+  padding-left: 20px;
+}
+
+.error-comment {
+  padding-left: 20px;
+}
+
+.give_a_rating {
+  position: relative;
+}
+
+.error-rating {
+  margin-top: 45px;
+}
+
+.label-field {
+  position: relative;
 }
 
 /* radio button */
@@ -149,6 +198,7 @@
 .rating {
   float: left;
   border: none;
+  transition: color var(--transition-timing);
 }
 .rating:not(:checked) > input {
   position: absolute;
@@ -185,31 +235,4 @@
 }
 .rating > label:active {
   position: relative;
-}
-.error {
-  color: rgba(238, 113, 113, 0.4);
-  font-weight: 200;
-  font-size: 12px;
-}
-.error-email {
-  padding-left: 20px;
-  padding-top: 2px;
-  position: absolute;
-  margin-bottom: 10px;
-}
-
-@media screen and (min-width: 768px) {
-  .error-email {
-    margin-bottom: 16px;
-  }
-}
-
-.error-comment {
-  padding-left: 20px;
-  position: absolute;
-  bottom: 100%;
-}
-.label-field {
-  position: relative;
-  margin-bottom: 10px;
 }
