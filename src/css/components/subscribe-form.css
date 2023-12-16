@@ -14,12 +14,19 @@
   width: 100%;
   border-radius: 30px;
   border: 1px solid var(--white);
+  outline: none;
 
   font-size: 14px;
   line-height: 1.29;
 
   color: var(--white);
   background-color: transparent;
+  transition: border-color var(--transition-timing);
+}
+
+.form-subscribe:hover,
+.form-subscribe:focus {
+  border-color: rgba(198, 205, 209, 0.5);
 }
 
 .form-subscribe::placeholder {
@@ -29,12 +36,20 @@
 .form-btn {
   font-size: 14px;
   line-height: 1.29;
-  padding: 12px 0;
+  padding: 11px 0;
 
   color: var(--black);
   background-color: var(--white);
-  border: none;
+  border: 1px solid var(--white);
   border-radius: 30px;
+  transition: background-color var(--transition-timing),
+    color var(--transition-timing);
+}
+
+.form-btn:hover,
+.form-btn:focus {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 @media screen and (min-width: 768px) {
