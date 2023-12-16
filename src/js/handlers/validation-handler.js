@@ -1,8 +1,7 @@
 const emailRegexp = /^\w+@[a-zA-Z_]+?.[a-zA-Z]{2,3}$/;
 
 function handleValidationErrors (errors, form) {
-  const ratingFieldset = form.querySelector('.users_rating');
-  const [emailLabel, reviewLabel] = form.querySelectorAll('label');
+  const [ratingFieldset, emailLabel, reviewLabel] = form.querySelectorAll('.users_rating, label');
   const [ratingError, emailError, reviewError] = form.querySelectorAll('.error');
 
   if (errors.rate) {
@@ -10,7 +9,7 @@ function handleValidationErrors (errors, form) {
     ratingError.textContent = errors.rate;
   } else {
     ratingFieldset.classList.remove('invalid');
-    ratingError.querySelector('.error').textContent = '';
+    ratingError.textContent = '';
   }
 
   if (errors.email) {
