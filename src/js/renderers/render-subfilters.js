@@ -4,9 +4,7 @@ import { subfiltersMarkup } from '../templates';
 import { showError } from '../helpers/toaster';
 import { common } from '../common';
 
-async function renderSubfilters(page, pagination) {
-  exercisesApi.page = page;
-
+async function renderSubfilters(pagination) {
   try {
     const data = await exercisesApi.getFilters();
     elements.gallery.innerHTML = subfiltersMarkup(data.results);

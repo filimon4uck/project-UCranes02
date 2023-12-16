@@ -106,18 +106,8 @@
   transition: color var(--transition-timing);
 }
 
-@media screen and (min-width: 768px) {
-  .search-button {
-    font-size: 16px;
-    line-height: 1.5px;
-  }
-}
-
 .filter-button:hover,
-.filter-button:focus {
-  color: var(--black);
-}
-
+.filter-button:focus,
 .filter-button-active {
   color: var(--black);
 }
@@ -135,6 +125,8 @@
   transition: transform var(--transition-timing);
 }
 
+.filter-button:hover,
+.filter-button:focus,
 .filter-button-active::after {
   transform: scale(1);
 }

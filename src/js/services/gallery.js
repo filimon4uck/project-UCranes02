@@ -5,20 +5,50 @@ import { renderPagination } from '../helpers/pagination';
 import { handleSearch } from '../handlers';
 import { handleBackButton } from '../handlers';
 import scrollToTopOrElement from '../helpers/scroll';
+import { getDeviseType } from '../helpers/screen-resolution';
 
 class Gallery {
   #state;
-  #subfiltersPage;
   #filter;
+  #subfiltersPage;
+  #subfilter;
+  #searchQuery;
+  #exercisesPage;
+  #limits;
 
-  constructor() {
-    this.#filter = 'muscles';
-    this.#state = 'subfilters';
-    this.#subfiltersPage = 1;
+  constructor({
+    state,
+    filter,
+    subfiltersPage,
+    subfilter,
+    searchQuery,
+    exercisesPage,
+    limits,
+  }) {
+    this.#state = state;
+    this.#filter = filter;
+    this.#subfiltersPage = subfiltersPage;
+    this.#subfilter = subfilter;
+    this.#searchQuery = searchQuery;
+    this.#exercisesPage = exercisesPage;
+    this.#limits = limits;
+  }
+
+  #saveStats() {
+    localStorage.setItem(
+      'gallery',
+      JSON.stringify({
+        state: this.#state,
+        filter: this.#filter,
+        subfiltersPage: this.#subfiltersPage,
+        subfilter: this.#subfilter,
+        searchQuery: this.#searchQuery,
+        exercisesPage: this.#exercisesPage,
+      })
+    );
   }
 
   #showExercisesGallery(subfilter) {
-    this.#state = 'exercises';
     elements.gallery.dataset.cards = 'exercises';
     elements.backBtn.classList.remove('back-button-hidden');
     elements.searchForm.classList.remove('search-form-hidden');
@@ -26,10 +56,10 @@ class Gallery {
 
     elements.backBtn.addEventListener('click', handleBackButton);
     elements.searchForm.addEventListener('click', handleSearch);
+    elements.searchForm.reset();
   }
 
   #showSubfiltersGallery() {
-    this.#state = 'subfilters';
     elements.gallery.dataset.cards = 'subfilters';
     elements.backBtn.classList.add('back-button-hidden');
     elements.searchForm.classList.add('search-form-hidden');
@@ -39,76 +69,148 @@ class Gallery {
     elements.searchForm.removeEventListener('click', handleSearch);
   }
 
-  changePage(newPage) {
+  #setFilterActive(newFilter, prevFilter) {
+    [...elements.filter.children].forEach(({ firstElementChild }) => {
+      switch (firstElementChild.dataset.filter) {
+        case newFilter:
+          firstElementChild.classList.add('filter-button-active');
+          break;
+        case prevFilter:
+          firstElementChild.classList.remove('filter-button-active');
+          break;
+      }
+    });
+  }
+
+  load() {
+    renderQuote();
+    exercisesApi.limit = this.#limits[this.#state];
+    exercisesApi.filter = this.#filter;
+
     switch (this.#state) {
       case 'subfilters':
-        renderSubfilters(newPage);
-        this.#subfiltersPage = newPage;
+        exercisesApi.page = this.#subfiltersPage;
+        renderSubfilters(renderPagination);
+        this.#showSubfiltersGallery();
         break;
       case 'exercises':
-        renderExercises(newPage);
+        exercisesApi.subFilter = this.#subfilter;
+        exercisesApi.keyword = this.#searchQuery;
+        exercisesApi.page = this.#exercisesPage;
+        elements.searchForm.elements.exercise.value = this.#searchQuery;
+        console.log(elements.searchForm.elements.exercise.value);
+        renderExercises(renderPagination);
+        this.#showExercisesGallery(this.#subfilter);
         break;
     }
 
-    scrollToTopOrElement(elements.gallerySubtitle)
+    this.#setFilterActive(this.#filter);
   }
 
   changeFilter(newFilter) {
     exercisesApi.filter = newFilter;
     exercisesApi.page = 1;
-    renderSubfilters(1, renderPagination);
+    exercisesApi.limit = this.#limits.subfilters;
+    renderSubfilters(renderPagination);
 
-    [...elements.filter.children].forEach(({ firstElementChild }) => {
-      switch (firstElementChild.dataset.filter) {
-        case this.#filter:
-          firstElementChild.classList.remove('filter-button-active');
-          break;
-        case newFilter:
-          firstElementChild.classList.add('filter-button-active');
-          break;
-      }
-    });
-
+    this.#setFilterActive(newFilter, this.#filter);
+    this.#state = 'subfilters';
     this.#filter = newFilter;
+    this.#subfiltersPage = 1;
     this.#showSubfiltersGallery();
+    this.#saveStats();
   }
 
   goExercises(subfilter) {
     exercisesApi.subFilter = subfilter;
     exercisesApi.keyword = '';
     exercisesApi.page = 1;
-    renderExercises(1, renderPagination);
+    exercisesApi.limit = this.#limits.exercises;
+    renderExercises(renderPagination);
 
+    this.#state = 'exercises';
+    this.#subfilter = subfilter;
+    this.#searchQuery = '';
+    this.#exercisesPage = 1;
     this.#showExercisesGallery(subfilter);
-    elements.searchForm.reset();
-    scrollToTopOrElement(elements.gallerySubtitle)
+    this.#saveStats();
+
+    scrollToTopOrElement(elements.gallerySubtitle);
+  }
+
+  goBack() {
+    exercisesApi.page = this.#subfiltersPage;
+    exercisesApi.limit = this.#limits.subfilters;
+    renderSubfilters(renderPagination);
+
+    this.#state = 'subfilters';
+    this.#showSubfiltersGallery();
+    this.#saveStats();
+  }
+
+  changePage(newPage) {
+    exercisesApi.page = newPage;
+
+    switch (this.#state) {
+      case 'subfilters':
+        renderSubfilters();
+        this.#subfiltersPage = newPage;
+        break;
+      case 'exercises':
+        renderExercises();
+        this.#exercisesPage = newPage;
+        break;
+    }
+
+    this.#saveStats();
+    scrollToTopOrElement(elements.gallerySubtitle);
   }
 
   goSearch(query) {
     exercisesApi.keyword = query;
     exercisesApi.page = 1;
-    renderExercises(1, renderPagination);
+    renderExercises(renderPagination);
+
+    this.#searchQuery = query;
+    this.#exercisesPage = 1;
+    this.#saveStats();
   }
 
   resetSearch() {
     exercisesApi.keyword = '';
     exercisesApi.page = 1;
-    renderExercises(1, renderPagination);
+    renderExercises(renderPagination);
+
+    this.#searchQuery = '';
+    this.#exercisesPage = 1;
+    this.#saveStats();
   }
 
-  goBack() {
-    exercisesApi.filter = this.#filter;
-    exercisesApi.page = this.#subfiltersPage;
-    renderSubfilters(this.#subfiltersPage, renderPagination);
+  refreshLimits(limits) {
+    this.limits = limits;
+    exercisesApi.limit = this.#limits[this.#state];
 
-    this.#showSubfiltersGallery();
-  }
-
-  load() {
-    renderQuote();
-    renderSubfilters(1, renderPagination);
+    switch (this.#state) {
+      case 'subfilters':
+        renderSubfilters(renderPagination);
+        break;
+      case 'exercises':
+        renderExercises(renderPagination);
+        break;
+    }
   }
 }
 
-const gallery = new Gallery();
+const gallery = new Gallery({
+  ...(JSON.parse(localStorage.getItem('gallery')) ?? {
+    state: 'subfilters',
+    filter: 'muscles',
+    subfiltersPage: 1,
+    subfilter: '',
+    searchQuery: '',
+    exercisesPage: 1,
+  }),
+  limits: getDeviseType(),
+});
+
 export { gallery };
