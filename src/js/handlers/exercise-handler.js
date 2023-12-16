@@ -85,11 +85,11 @@ const handleListeners = (detailsPopupHtml, data) => {
   ratingPopup.addEventListener('click', stopPropagation);
   
   detailsCloseButton.addEventListener('click', () => {
-    backdrop.remove();
+    closeDetailsPopup(backdrop);
   });
 
   ratingButton.addEventListener('click', () => {
-    popUpState.ratingPopup = true;
+    popUpState.ratingPopup = true;  
     backdrop.innerHTML = '';
     backdrop.append(ratingPopup);
   });
