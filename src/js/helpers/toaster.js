@@ -7,7 +7,6 @@ iziToast.settings({
   position: 'bottomCenter',
   transitionIn: 'flipInX',
   transitionOut: 'flipOutX',
-  maxWidth: 335,
   theme: 'dark',
   backgroundColor: '#242424',
 });

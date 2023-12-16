@@ -87,19 +87,13 @@
   background: none;
   height: 42px;
   width: 100%;
-  margin-bottom: 10px;
   color: rgba(244, 244, 244, 0.6);
 }
 
 .email_field:hover,
 .email_field:focus {
   border: 1px solid rgba(244, 244, 244, 0.6);
-}
-
-@media screen and (min-width: 768px) {
-  .email_field {
-    margin-bottom: 16px;
-  }
+  outline: 0;
 }
 
 .comment_field {
@@ -114,11 +108,13 @@
   height: 93px;
   margin-bottom: 20px;
   resize: none;
+  margin-top: 20px;
 }
 
 .comment_field:hover,
 .comment_field:focus {
   border: 1px solid rgba(244, 244, 244, 0.6);
+  outline: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -145,6 +141,7 @@
   color: #f4f4f4;
   border: 1px solid #f4f4f4;
   margin-bottom: 38px;
+  outline: 0;
 }
 
 /* radio button */
@@ -188,4 +185,31 @@
 }
 .rating > label:active {
   position: relative;
+}
+.error {
+  color: rgba(238, 113, 113, 0.4);
+  font-weight: 200;
+  font-size: 12px;
+}
+.error-email {
+  padding-left: 20px;
+  padding-top: 2px;
+  position: absolute;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .error-email {
+    margin-bottom: 16px;
+  }
+}
+
+.error-comment {
+  padding-left: 20px;
+  position: absolute;
+  bottom: 100%;
+}
+.label-field {
+  position: relative;
+  margin-bottom: 10px;
 }
