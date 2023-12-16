@@ -32,6 +32,7 @@ function handleBackdropClick(e) {
 
 function toggleModal() {
   modal.classList.toggle('is-hidden');
+  document.documentElement.classList.toggle('no-scroll');
   window.removeEventListener('keydown', handleKeyDownClick);
 }
 
