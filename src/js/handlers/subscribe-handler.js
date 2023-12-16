@@ -15,10 +15,10 @@ async function handleSubscribe(e) {
   const { email } = validate({ email: data.subscribe });
 
   if (email) {
-    errorRef.classList.remove('is-hidden');
+    errorRef.classList.remove('visually-hidden');
   } else {
     e.currentTarget.reset();
-    errorRef.classList.add('is-hidden');
+    errorRef.classList.add('visually-hidden');
     try {
       const response = await exercisesApi.subscribe({
         email: data.subscribe,
