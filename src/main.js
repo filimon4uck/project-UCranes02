@@ -14,6 +14,8 @@ import {
 } from './js/handlers';
 import { gallery } from './js/services/gallery';
 
+import { resizeObserver } from './js/helpers/screen-resolution';
+
 elements.filter.addEventListener('click', handleFilter);
 elements.gallery.addEventListener('click', handleSubfilter);
 elements.gallery.addEventListener('click', handleExercise);
@@ -34,3 +36,5 @@ elements.searchForm.addEventListener(
 );
 
 gallery.load();
+
+resizeObserver.observe(document.querySelector("html"));
