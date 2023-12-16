@@ -107,7 +107,7 @@ const handleListeners = (detailsPopupHtml, data) => {
   document.body.append(backdrop);
 }
 
-async function handleExercise(e, ratingPopupCallback) {
+async function handleExercise(e) {
   e.preventDefault();
   if (!e.target.closest('[data-id]')) return;
 
