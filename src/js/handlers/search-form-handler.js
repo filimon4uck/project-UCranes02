@@ -3,10 +3,8 @@ import { gallery } from '../services/gallery';
 
 function handleSearch(evt) {
   evt.preventDefault();
-  const textTosearch = elements.searchForm.exercise.value.trim().toLowerCase();
-  if (textTosearch) {
-    gallery.goSearch(textTosearch);
-  }
+  const textTosearch = elements.searchForm.exercise.value.trim();
+  gallery.goSearch(textTosearch);  
 }
 
 export default handleSearch;
