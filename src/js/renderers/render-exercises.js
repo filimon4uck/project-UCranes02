@@ -2,8 +2,7 @@ import { elements } from '../elements';
 import { exercisesApi } from '../services/exercises-api';
 import { exercisesMarkup } from '../templates';
 
-async function renderExercises(page, pagination) {
-  exercisesApi.page = page;
+async function renderExercises(pagination) {
 
   const data = await exercisesApi.getExercises();
   elements.gallery.innerHTML = exercisesMarkup(data.results);
