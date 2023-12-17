@@ -9,6 +9,14 @@
   animation: grow 1s linear;
 }
 
+.exercise-modal-backdrop.is-hidden {
+  display: none;
+}
+
+.exercise-modal-backdrop .loader {
+  border: 5px solid var(--white);
+  border-bottom-color: transparent;
+}
 
 .exercise-modal {
   position: absolute;

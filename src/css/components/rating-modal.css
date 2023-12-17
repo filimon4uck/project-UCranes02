@@ -13,6 +13,10 @@
   animation: appear 1s linear;
 }
 
+.modal .loader {
+  left: 44%;
+}
+
 @media screen and (min-width: 768px) {
   .modal {
     width: 430px;
