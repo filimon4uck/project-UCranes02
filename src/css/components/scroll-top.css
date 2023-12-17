@@ -1,16 +1,24 @@
 .js-scroll-top-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: none;
+  padding: 0;
+  display: grid;
+  place-items: center;
   background-color: var(--black);
   border-radius: 50px;
-  border: 1px solid var(--white);
   width: 40px;
   height: 40px;
   transition: 0.2s;
   position: fixed;
   right: 20px;
   bottom: 50px;
+}
+.scroll-top-icon-wrapper {
+  display: grid;
+  place-items: center;
+  background-color: var(--black);
+  width: 93%;
+  height: 93%;
+  border-radius: 50%;
 }
 @media screen and (min-width: 768px) {
   .js-scroll-top-button {
@@ -24,11 +32,11 @@
   visibility: hidden;
 }
 .scroll-top-icon {
-  width: 13px;
-  height: 13px;
+  max-width: 13px;
+  max-height: 13px;
   fill: var(--white);
 }
-.js-scroll-top-button:hover {
+.js-scroll-top-button:hover .scroll-top-icon-wrapper {
   background-color: var(--white);
   border-color: var(--black);
 }
