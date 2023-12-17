@@ -67,14 +67,7 @@
   align-items: center;
   margin-right: 0;
   flex-shrink: 0;
-  background: linear-gradient(
-      0deg,
-      rgba(4, 4, 4, 0.2) 0%,
-      rgba(4, 4, 4, 0.2) 100%
-    ),
-    lightgray -4.738px -23.782px / 102.769% 125.398% no-repeat,
-    url(<path-to-image>), lightgray -2px -6.558px / 105.185% 109.653% no-repeat;
-    margin-bottom: 20px;
+   margin-bottom: 20px;
 }
 
 .exercise-card-img-wrap::after {
