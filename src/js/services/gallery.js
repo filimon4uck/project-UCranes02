@@ -226,7 +226,7 @@ class Gallery {
   }
 
   refreshLimits(limits) {
-    this.limits = limits;
+    this.#limits = limits;
     exercisesApi.limit = this.#limits[this.#state];
 
     switch (this.#state) {
