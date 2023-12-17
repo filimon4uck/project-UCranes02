@@ -18,6 +18,8 @@ export default async function submitForm(e, onSuccess) {
 
   handleValidationErrors(validarionResult, e.target);
   if (validarionResult.isInvalid) return;
+  e.target.querySelector('[type="submit"]').disabled = true;
+  
   renderLoader(e.target);
   try {
     showLoader(e.target);
@@ -28,5 +30,6 @@ export default async function submitForm(e, onSuccess) {
     console.log(error);
     showError("Something went wrong. Please try again later.");
     hideLoader(e.target);
+    e.target.querySelector('[type="submit"]').disabled = false;
   }
 }

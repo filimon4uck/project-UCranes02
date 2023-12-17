@@ -17,6 +17,7 @@ import {
 import scrollToTopOrElement from '../helpers/scroll';
 import { getDeviseType } from '../helpers/screen-resolution';
 import { common } from '../common';
+import renderLoader from '../renderers/render-loader';
 
 class Gallery {
   #state;
@@ -117,7 +118,7 @@ class Gallery {
     switch (this.#state) {
       case 'subfilters':
         exercisesApi.page = this.#subfiltersPage;
-        renderSubfilters(renderPagination);
+        renderSubfilters();
         this.#showSubfiltersGallery();
         break;
       case 'exercises':
@@ -130,7 +131,7 @@ class Gallery {
         //   this.#searchQuery
         // );
 
-        renderExercises(renderPagination);
+        renderExercises();
         this.#showExercisesGallery(this.#subfilter);
         break;
     }
