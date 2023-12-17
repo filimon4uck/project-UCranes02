@@ -4,7 +4,8 @@
 .icon-card-btn {
   stroke: var(--black);
 }
-.icon-delete-favorite {
+.icon-delete-favorite,
+.icon-add-favorite  {
   stroke: var(--black);
   fill: none;
   display: block;
@@ -21,7 +22,18 @@
   justify-content: center;
   align-items: center;
 }
-.btn-delete-card:hover .icon-delete-favorite {
+.btn-add-card {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.btn-delete-card:hover .icon-delete-favorite,
+.btn-add-card:hover .icon-add-favorite {
   transform: scale(1.4);
 }
 .block-btn-icon-exer {
