@@ -31,7 +31,8 @@
   .gallery-list[data-cards="subfilters"] {
     column-gap: 15px;
   }
-
+  
+  .gallery-list[data-cards="favorites"],
   .gallery-list[data-cards="exercises"] {
     column-gap: 16px;
   }
