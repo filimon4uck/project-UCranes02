@@ -35,7 +35,7 @@ class Favorites {
 
   #renderList() {
     const totalPages = Math.ceil(this.#exercises.length / this.#limit);
-   
+
     if (totalPages && this.#page > totalPages) {
       this.#page = totalPages;
     }
@@ -44,13 +44,13 @@ class Favorites {
       (this.#page - 1) * this.#limit,
       this.#limit
     );
-    
+
     renderFavorites(array, this.#page, totalPages);
     this.#savePage();
   }
 
   load() {
-    renderQuote("favorite");
+    renderQuote('favorite');
     this.#renderList();
     elements.gallery.addEventListener('click', handleExercise);
     elements.gallery.addEventListener('click', handleFavoritesRemove);
@@ -83,7 +83,7 @@ class Favorites {
   }
 
   refreshLimits(limits) {
-    if (limits.favorites === this.#limit) return
+    if (limits.favorites === this.#limit) return;
 
     this.#limit = limits.favorites;
     this.#renderList();

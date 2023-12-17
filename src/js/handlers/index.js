@@ -12,6 +12,7 @@ import handleBackButton from './back-button-handler';
 import handleFavoritePagination from './favorites-pagination-handler';
 import handlerOpenMenu from './burget-menu-handler';
 import handleFavoritesRemove from './favorites-remove-handler';
+import handlerAddToFavoritesBtn from './add-to-favorites-btn-handler';
 
 export {
   handleFilter,
@@ -29,4 +30,5 @@ export {
   handleFavoritePagination,
   handlerOpenMenu,
   handleFavoritesRemove,
+  handlerAddToFavoritesBtn,
 };

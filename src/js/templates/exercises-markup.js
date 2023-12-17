@@ -2,6 +2,8 @@ import removeIconPath from '../../img/icons.svg#icon-remove';
 import starIconPath from '../../img/icons.svg#icon-star';
 import iconArrowPath from '../../img/icons.svg#icon-arrow';
 import iconRunningManPath from '../../img/icons.svg#icon-run-man';
+import heartIconPath from '../../img/icons.svg#icon-heart';
+import { favorites } from '../services/favorites-page';
 
 function exercisesMarkup(array, page) {
   return array
@@ -23,9 +25,24 @@ function exercisesMarkup(array, page) {
                   <use href="${removeIconPath}"></use>
                 </svg>
                 </button>
-                
               `
                 : `
+               <button class="btn-delete-card ${
+                 favorites.isFavorite(_id) ? '' : 'is-hidden'
+               }" type="button" data-delete="${_id}">
+                <svg class="icon-delete-favorite" width="16" height="16">
+                  <use href="${removeIconPath}"></use>
+                </svg>
+                </button>
+                   
+                <button class="btn-add-card ${
+                  favorites.isFavorite(_id) ? 'is-hidden' : ''
+                }"" type="button" data-add="${_id}">
+                <svg class="icon-add-favorite" width="16" height="16">
+                 <use href="${heartIconPath}"></use>
+               </svg>
+               </button>
+               
                 <div class="cont-card-rating">
                   <p class="card-rating-exer">${rating}</p>
                   <svg class="icon-card-exer" width="18" height="18">

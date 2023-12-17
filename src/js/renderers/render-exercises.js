@@ -5,8 +5,18 @@ import { showError } from '../helpers/toaster';
 import { exercisesApi } from '../services/exercises-api';
 import { gallery } from '../services/gallery';
 import { exercisesMarkup } from '../templates';
+import handlerAddToFavoritesBtn from '../handlers/add-to-favorites-btn-handler';
+import handleFavoritesRemove from '../handlers/favorites-remove-handler';
 
 async function renderExercises() {
+  const data = await exercisesApi.getExercises();
+  elements.gallery.innerHTML = exercisesMarkup(data.results);
+
+  renderPagination(Number(data.page), data.totalPages);
+  // ---------------------------------------
+  elements.gallery.addEventListener('click', handlerAddToFavoritesBtn);
+  elements.gallery.addEventListener('click', handleFavoritesRemove);
+  // ---------------------------------------
   elements.gallery.classList.add('unmounting');
   try {
     const { results, page, totalPages } = await exercisesApi.getExercises();

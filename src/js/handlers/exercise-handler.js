@@ -67,11 +67,8 @@ const handleBackdropClickAndEsc = (backdrop, ratingPopup, detailsPopup) => {
 const handleListeners = (detailsPopupHtml, data, backdrop) => {
   backdrop.insertAdjacentHTML('beforeend', detailsPopupHtml);
 
-
   const detailsPopup = backdrop.querySelector('.exercise-modal');
-  const detailsCloseButton = backdrop.querySelector(
-    '.exercise-card-close-btn'
-  );
+  const detailsCloseButton = backdrop.querySelector('.exercise-card-close-btn');
   const ratingButton = backdrop.querySelector('.add-rating-btn');
   const favoriteButton = backdrop.querySelector('.add-favorites-btn');
 
@@ -79,7 +76,9 @@ const handleListeners = (detailsPopupHtml, data, backdrop) => {
     .querySelector('#modal-template')
     .content.firstElementChild.cloneNode(true);
 
-  const closeIconPath = detailsCloseButton.querySelector('use').getAttribute('href');
+  const closeIconPath = detailsCloseButton
+    .querySelector('use')
+    .getAttribute('href');
   ratingPopup.querySelector('use').setAttribute('href', closeIconPath);
 
   window.addEventListener('keydown', e => {
@@ -123,15 +122,18 @@ const handleListeners = (detailsPopupHtml, data, backdrop) => {
 
 async function handleExercise(e) {
   e.preventDefault();
-  if (!e.target.closest('[data-id]') || e.target.closest('[data-delete]'))
+  if (
+    !e.target.closest('[data-id]') ||
+    e.target.closest('[data-delete]') ||
+    e.target.closest('[data-add]')
+  )
     return;
-
   const backdrop = document.querySelector('.exercise-modal-backdrop');
   backdrop.classList.remove('is-hidden');
-  
+
   try {
     const exerciseId = e.target.closest('[data-id]').dataset.id;
-    
+
     renderLoader(backdrop);
     showLoader(backdrop);
     const data = await exercisesApi.getExerciseById(exerciseId);
