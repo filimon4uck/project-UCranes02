@@ -79,6 +79,9 @@ const handleListeners = (detailsPopupHtml, data, backdrop) => {
     .querySelector('#modal-template')
     .content.firstElementChild.cloneNode(true);
 
+  const closeIconPath = detailsCloseButton.querySelector('use').getAttribute('href');
+  ratingPopup.querySelector('use').setAttribute('href', closeIconPath);
+
   window.addEventListener('keydown', e => {
     if (e.code !== 'Escape') return;
     handleBackdropClickAndEsc(backdrop, ratingPopup, detailsPopup);
