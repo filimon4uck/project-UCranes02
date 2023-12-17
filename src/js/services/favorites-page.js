@@ -63,7 +63,7 @@ class Favorites {
   }
 
   load() {
-    renderQuote();
+    renderQuote("favorite");
     this.#renderList();
     elements.gallery.addEventListener('click', handleExercise);
     elements.gallery.addEventListener('click', handleFavoritesRemove);
