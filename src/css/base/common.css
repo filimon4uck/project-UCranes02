@@ -10,7 +10,3 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-.btn-delete-card {
-  background-color: rgb(43, 25, 25) !important;
-}

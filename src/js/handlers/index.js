@@ -10,6 +10,7 @@ import { handleScrollTop, handleScrollTopBtnShow } from './scrollTop-handlers';
 import handleBackButton from './back-button-handler';
 import handleFavoritePagination from './favorites-pagination-handler';
 import handlerOpenMenu from './burget-menu-handler';
+import handleFavoritesRemove from './favorites-remove-handler';
 
 export {
   handleFilter,
@@ -25,4 +26,5 @@ export {
   handleBackButton,
   handleFavoritePagination,
   handlerOpenMenu,
+  handleFavoritesRemove,
 };

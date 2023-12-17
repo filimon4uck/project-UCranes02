@@ -1,5 +1,3 @@
-import { renderSubfilters } from '../renderers';
-import { exercisesApi } from '../services/exercises-api';
 import { gallery } from '../services/gallery';
 
 function handleFilter(e) {
