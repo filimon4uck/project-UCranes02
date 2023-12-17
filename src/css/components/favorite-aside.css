@@ -68,6 +68,7 @@
     height: 141px;
     border-radius: 20px;
     background-image: url('../../img/favorites/favorites-tablet.jpg');
+    background-size: cover;
   }
 
   @media screen and (min-resolution: 192dpi),
