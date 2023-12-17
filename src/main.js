@@ -5,13 +5,11 @@ import {
   handleScrollTop,
   handleScrollTopBtnShow,
   handlerOpenMenu,
-  handleAnimateTopScrollButton,
 } from './js/handlers';
 import { gallery } from './js/services/gallery';
 import { resizeObserver } from './js/helpers/screen-resolution';
 
-window.addEventListener('scroll', throttle(handleScrollTopBtnShow, 500));
-window.addEventListener('scroll', handleAnimateTopScrollButton);
+window.addEventListener('scroll', throttle(handleScrollTopBtnShow, 100));
 elements.scrollTopBtn.addEventListener('click', handleScrollTop);
 elements.btnOpenBurger.addEventListener('click', handlerOpenMenu);
 elements.btnCloseBurger.addEventListener('click', handlerOpenMenu);
