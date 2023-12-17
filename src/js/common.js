@@ -1,5 +1,6 @@
 const common = {
   SS_KEY_FILTERS: 'user filters',
+  SS_KEY_FAVORITES: 'favorites-page',
   LS_KEY_FAVORITES: 'favorites',
   LS_KEY_QUOTE: 'quote',
   BASE_QUOTE: {
