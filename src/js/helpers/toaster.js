@@ -9,6 +9,7 @@ iziToast.settings({
   transitionOut: 'flipOutX',
   theme: 'dark',
   backgroundColor: '#242424',
+  maxWidth: 600,
 });
 
 function showError(message) {
