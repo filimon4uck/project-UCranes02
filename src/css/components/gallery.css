@@ -1,4 +1,5 @@
 .gallery-box {
+  width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 20px;
@@ -16,6 +17,14 @@
   row-gap: 20px;
 }
 
+.gallery-list li {
+  transition: opacity var(--transition-timing);
+}
+
+.gallery-list.unmounting li {
+  opacity: 0;
+}
+
 @media screen and (max-width: 767px) {
   .gallery-list {
     flex-direction: column;
@@ -28,18 +37,14 @@
     row-gap: 32px;
   }
 
-  .gallery-list[data-cards="subfilters"] {
+  .gallery-list {
     column-gap: 15px;
-  }
-  
-  .gallery-list[data-cards="favorites"],
-  .gallery-list[data-cards="exercises"] {
-    column-gap: 16px;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .gallery-list[data-cards="subfilters"] {
+  .gallery-list[data-cards='subfilters'],
+  .gallery-list[data-cards='exercises'] {
     margin-right: -1px;
     margin-left: -1px;
   }
@@ -47,12 +52,12 @@
 
 @media screen and (min-width: 1440px) {
   .favorites-body {
-    max-height: calc(100vh - 313px);
+    max-height: calc(100vh - 323px);
   }
   .favorites-body .pagination-container {
     display: none;
   }
-  .gallery-list[data-cards="favorites"] {
+  .gallery-list[data-cards='favorites'] {
     height: 100%;
     overflow-y: scroll;
   }
