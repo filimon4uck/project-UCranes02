@@ -27,6 +27,7 @@ function exercisesMarkup(array, page) {
                 </button>
               `
                 : `
+            <div class="btn-card-group">
                <button class="btn-delete-card ${
                  favorites.isFavorite(_id) ? '' : 'is-hidden'
                }" type="button" data-delete="${_id}">
@@ -34,7 +35,6 @@ function exercisesMarkup(array, page) {
                   <use href="${removeIconPath}"></use>
                 </svg>
                 </button>
-                   
                 <button class="btn-add-card ${
                   favorites.isFavorite(_id) ? 'is-hidden' : ''
                 }"" type="button" data-add="${_id}">
@@ -42,7 +42,7 @@ function exercisesMarkup(array, page) {
                  <use href="${heartIconPath}"></use>
                </svg>
                </button>
-               
+            </div>  
                 <div class="cont-card-rating">
                   <p class="card-rating-exer">${rating}</p>
                   <svg class="icon-card-exer" width="18" height="18">
