@@ -10,6 +10,7 @@
   justify-content: center;
   border: none;
   padding: 0;
+  transition: color var(--transition-timing);
 }
 .pagination-el.active {
   color: var(--black);
@@ -23,6 +24,9 @@
 .pagination-el.unactive {
   background-color: transparent;
   color: var(--disabled);
+}
+.pagination-el.unactive:hover {
+  color: var(--black);
 }
 .js-pagination {
   display: flex;
