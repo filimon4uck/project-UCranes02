@@ -6,9 +6,9 @@
   height: 100%;
   background-color: var(--modal-overlay);
   z-index: 998;
-  transition: opacity var(--transition-timing),
-    visibility var(--transition-timing);
+  animation: grow 1s linear;
 }
+
 
 .exercise-modal {
   position: absolute;
