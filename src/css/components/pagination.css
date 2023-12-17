@@ -10,16 +10,23 @@
   justify-content: center;
   border: none;
   padding: 0;
+  transition: color var(--transition-timing);
 }
 .pagination-el.active {
   color: var(--black);
   border-color: var(--black);
   border-radius: 50%;
+  border: 1px solid;
   width: 31px;
   height: 31px;
+  cursor: default;
 }
 .pagination-el.unactive {
+  background-color: transparent;
   color: var(--disabled);
+}
+.pagination-el.unactive:hover {
+  color: var(--black);
 }
 .js-pagination {
   display: flex;
@@ -40,4 +47,8 @@
     width: 32px;
     height: 32px;
   }
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }
