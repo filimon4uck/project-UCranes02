@@ -9,6 +9,7 @@ import handleSearch from './search-form-handler';
 import { handleScrollTop, handleScrollTopBtnShow } from './scrollTop-handlers';
 import handleBackButton from './back-button-handler';
 import handleFavoritePagination from './favorites-pagination-handler';
+import handlerOpenMenu from './burget-menu-handler';
 
 export {
   handleFilter,
@@ -22,5 +23,6 @@ export {
   handleScrollTop,
   handleScrollTopBtnShow,
   handleBackButton,
-  handleFavoritePagination
+  handleFavoritePagination,
+  handlerOpenMenu,
 };
