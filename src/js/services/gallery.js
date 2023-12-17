@@ -17,7 +17,6 @@ import {
 import scrollToTopOrElement from '../helpers/scroll';
 import { getDeviseType } from '../helpers/screen-resolution';
 import { common } from '../common';
-import renderLoader from '../renderers/render-loader';
 
 class Gallery {
   #state;
