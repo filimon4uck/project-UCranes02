@@ -38,7 +38,7 @@ function exerciseDetailsMarkup({
                 : `
             <div class="exercise-card-no-img-wrap">
               <svg class="exercise-card-no-img" aria-label="No image">
-                  <use class="exercise-card-no-img-icon" href="./img/icons.svg#icon-camera"></use>
+                  <use class="exercise-card-no-img-icon" href="${noImgIcon}"></use>
               </svg>
               <span>image not found</span>
             </div>
