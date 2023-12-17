@@ -1,9 +1,11 @@
+import { hideLoader, showLoader } from '../helpers/loader';
 import { showSuccess, showError } from '../helpers/toaster';
 import { exercisesApi } from '../services/exercises-api';
 import { exerciseDetailsMarkup } from '../templates';
 import handleFavorites from './add-favorites-handler';
 import submitForm from './rating-modal-handler';
 import handleSetRating from './rating-select-handler';
+import renderLoader from '../renderers/render-loader';
 
 const popUpState = {
   detailsPopup: false,
@@ -35,13 +37,14 @@ const handleRatingPopup = (ratingPopup, { closeCallback, submitCallback }) => {
 const closeDetailsPopup = backdrop => {
   popUpState.detailsPopup = false;
   popUpState.ratingPopup = false;
-  backdrop?.remove();
+  backdrop?.classList.add('is-hidden');
+  backdrop?.querySelector('.exercise-modal')?.remove();
   document.documentElement.classList.remove('no-scroll');
 };
 
 const closeRatingPopup = (backdrop, ratingPopup, detailsPopup) => {
   ratingPopup.remove();
-  backdrop.innerHTML = '';
+  backdrop.querySelector('[data-modal]')?.remove();
   popUpState.ratingPopup = false;
   backdrop.append(detailsPopup);
 };
@@ -60,17 +63,16 @@ const handleBackdropClickAndEsc = (backdrop, ratingPopup, detailsPopup) => {
   }
 };
 
-const handleListeners = (detailsPopupHtml, data) => {
-  const container = document.createElement('div');
-  container.innerHTML = detailsPopupHtml;
+const handleListeners = (detailsPopupHtml, data, backdrop) => {
+  backdrop.insertAdjacentHTML('beforeend', detailsPopupHtml);
 
-  const backdrop = container.querySelector('.exercise-modal-backdrop');
-  const detailsPopup = container.querySelector('.exercise-modal');
-  const detailsCloseButton = container.querySelector(
+
+  const detailsPopup = backdrop.querySelector('.exercise-modal');
+  const detailsCloseButton = backdrop.querySelector(
     '.exercise-card-close-btn'
   );
-  const ratingButton = container.querySelector('.add-rating-btn');
-  const favoriteButton = container.querySelector('.add-favorites-btn');
+  const ratingButton = backdrop.querySelector('.add-rating-btn');
+  const favoriteButton = backdrop.querySelector('.add-favorites-btn');
 
   const ratingPopup = document
     .querySelector('#modal-template')
@@ -94,7 +96,7 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   ratingButton.addEventListener('click', () => {
     popUpState.ratingPopup = true;
-    backdrop.innerHTML = '';
+    backdrop?.querySelector('.exercise-modal')?.remove();
     backdrop.append(ratingPopup);
   });
 
@@ -113,7 +115,6 @@ const handleListeners = (detailsPopupHtml, data) => {
 
   document.documentElement.classList.add('no-scroll');
   popUpState.detailsPopup = true;
-  document.body.append(backdrop);
 };
 
 async function handleExercise(e) {
@@ -123,11 +124,16 @@ async function handleExercise(e) {
 
   try {
     const exerciseId = e.target.closest('[data-id]').dataset.id;
-
+    const backdrop = document.querySelector('.exercise-modal-backdrop');
+    backdrop.classList.remove('is-hidden');
+    
+    renderLoader(backdrop);
+    showLoader();
+    debugger;
     const data = await exercisesApi.getExerciseById(exerciseId);
-
+    hideLoader();
     const detailsPopup = exerciseDetailsMarkup(data);
-    const modalElement = handleListeners(detailsPopup, data);
+    const modalElement = handleListeners(detailsPopup, data, backdrop);
   } catch (err) {
     console.error(err);
     showError('Something went wrong. Please try again later.');

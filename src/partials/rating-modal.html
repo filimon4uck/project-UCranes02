@@ -1,58 +1,61 @@
-<template id="modal-template">
-  <div class="modal" data-modal>
-    <button type="button" class="modal__close-btn" data-modal-close>
-      <svg class="modal__close-icon" width="24" height="24" aria-label="Close">
-        <use href="/img/icons.svg#icon-close"></use>
-      </svg>
-    </button>
-
-    <form class="give_a_rating">
-      <h3 class="title_rating">Rating</h3>
-      <div class="users_rating">
-        <p class="number_rating">0.0</p>
-        <fieldset class="rating">
-          <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5"></label>
-          <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4"></label>
-          <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3"></label>
-          <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2"></label>
-          <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1"></label>
-        </fieldset>
-        <p class="error error-rating"></p>
-      </div>
-
-      <label class="label-field">
-        <input
-          class="email_field"
-          type="email"
-          name="email"
-          class="email__input"
-          id="user_email_up"
-          required=""
-          placeholder="Email"
-        />
-        <p class="error error-email"></p>
-      </label>
-      <label class="label-field">
-        <textarea
-          class="comment_field"
-          type="text"
-          name="review"
-          class="comment__input"
-          id="user_comment"
-          required=""
-          placeholder="Your comment"
-          autocomplete="off"
-        ></textarea>
-        <p class="error error-comment"></p>
-      </label>
-      <button class="btn_submit" type="submit">Send</button>
-
-      <div class="rating_send_btn"></div>
-    </form>
-  </div>
-</template>
+<div class="exercise-modal-backdrop is-hidden">
+  <template id="modal-template">
+    <div class="modal" data-modal>
+      <button type="button" class="modal__close-btn" data-modal-close>
+        <svg class="modal__close-icon" width="24" height="24" aria-label="Close">
+          <use href="/img/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+  
+      <form class="give_a_rating">
+        <h3 class="title_rating">Rating</h3>
+        <div class="users_rating">
+          <p class="number_rating">0.0</p>
+          <fieldset class="rating">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5"></label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4"></label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3"></label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2"></label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1"></label>
+          </fieldset>
+          <p class="error error-rating"></p>
+        </div>
+  
+        <label class="label-field">
+          <input
+            class="email_field"
+            type="email"
+            name="email"
+            class="email__input"
+            id="user_email_up"
+            required=""
+            placeholder="Email"
+          />
+          <p class="error error-email"></p>
+        </label>
+        <label class="label-field">
+          <textarea
+            class="comment_field"
+            type="text"
+            name="review"
+            class="comment__input"
+            id="user_comment"
+            required=""
+            placeholder="Your comment"
+            autocomplete="off"
+          ></textarea>
+          <p class="error error-comment"></p>
+        </label>
+        <button class="btn_submit" type="submit">Send</button>
+  
+        <div class="rating_send_btn"></div>
+      </form>
+    </div>
+  </template>
+  
+</div>
