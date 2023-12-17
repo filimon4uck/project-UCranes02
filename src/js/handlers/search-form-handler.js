@@ -1,10 +1,9 @@
 import { elements } from '../elements';
 import { gallery } from '../services/gallery';
 
-function handleSearch(evt) {
-  evt.preventDefault();
+function handleSearch() {
   const textTosearch = elements.searchForm.exercise.value.trim();
-  gallery.goSearch(textTosearch);  
+  gallery.goSearch(textTosearch);
 }
 
 export default handleSearch;
