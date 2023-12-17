@@ -6,6 +6,7 @@ const elements = {
   gallerySubtitle: document.querySelector('.js-subtitle'),
   pagination: document.querySelector('.js-pagination'),
   searchForm: document.querySelector('.js-search-form'),
+  resetSearchForm: document.querySelector('.js-reset-form'),
   backBtn: document.querySelector('.js-back-button'),
   subscribeForm: document.querySelector('.js-subscribe-form'),
   quote: document.querySelector('.js-quote'),

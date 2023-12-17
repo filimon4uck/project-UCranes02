@@ -10,6 +10,7 @@ import {
   handleFilter,
   handlePagination,
   handlePolicyModal,
+  handleResetSearch,
   handleSearch,
   handleSubfilter,
   handleSubscribe,
@@ -75,6 +76,7 @@ class Gallery {
       })
     );
     elements.gallery.removeEventListener('click', handleSubfilter);
+    elements.resetSearchForm.addEventListener('click', handleResetSearch);
     elements.searchForm.reset();
   }
 
@@ -94,6 +96,7 @@ class Gallery {
         trailing: true,
       })
     );
+    elements.resetSearchForm.removeEventListener('click', handleResetSearch);
   }
 
   #setFilterActive(newFilter, prevFilter) {
@@ -125,10 +128,10 @@ class Gallery {
         exercisesApi.keyword = this.#searchQuery;
         exercisesApi.page = this.#exercisesPage;
 
-        // elements.searchForm.elements.exercise.setAttribute(
-        //   'value',
-        //   this.#searchQuery
-        // );
+        elements.searchForm.elements.exercise.setAttribute(
+          'value',
+          this.#searchQuery
+        );
 
         renderExercises();
         this.#showExercisesGallery(this.#subfilter);
