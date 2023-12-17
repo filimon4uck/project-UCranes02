@@ -47,7 +47,6 @@
 }
 .main-item_card-exercises {
   list-style-type: none;
-  max-width: 335px;
   position: relative;
 }
 .link-exercise-card {
@@ -181,19 +180,22 @@
     font-size: 24px;
     line-height: 1.33;
   }
-  .main-item_card-exercises {
-    max-width: 344px;
-  }
   .list-info-exer {
     max-width: 312px;
   }
   .cont-icon-name-text {
     margin-bottom: 8px;
   }
+  .main-item_card-exercises {
+    width: 344px;
+  }
 }
 @media screen and (min-width: 1440px) {
-  .main-item_card-exercises {
-    max-width: 442px;
+  [data-cards="exercises"] .main-item_card-exercises {
+    width: 442px;
+  }
+  [data-cards="favorites"] .main-item_card-exercises {
+    width: 405px;
   }
   .text-name-exercises-card {
     width: 272px;

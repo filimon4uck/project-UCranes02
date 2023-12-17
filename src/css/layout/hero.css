@@ -63,7 +63,7 @@
 }
 .block-hero {
   padding-bottom: 20px;
-  padding-top: 40px;
+  padding-top: 80px;
 }
 .small-img-hero {
   display: none;
@@ -115,6 +115,7 @@
     line-height: 24px;
   }
   .block-hero {
+    padding-top: 100px;
     padding-bottom: 32px;
   }
   .cont-text-small-img {
@@ -122,6 +123,9 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .block-hero {
+    padding-top: 96px;
+  }
   .hero-list-for-des {
     display: flex;
     width: 197px;

@@ -11,7 +11,6 @@
   overflow: hidden;
 }
 
-.scroll-fixed {
-  position: fixed;
-  overflow: hidden;
+.btn-delete-card {
+  background-color: rgb(43, 25, 25) !important;
 }
