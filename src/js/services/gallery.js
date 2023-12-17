@@ -226,17 +226,19 @@ class Gallery {
   }
 
   refreshLimits(limits) {
-    this.#limits = limits;
-    exercisesApi.limit = this.#limits[this.#state];
-
-    switch (this.#state) {
-      case 'subfilters':
-        renderSubfilters(renderPagination);
-        break;
-      case 'exercises':
-        renderExercises(renderPagination);
-        break;
+    if (limits[this.#state] !== this.#limits[this.#state]) {
+      exercisesApi.limit = limits[this.#state];
+      switch (this.#state) {
+        case 'subfilters':
+          renderSubfilters();
+          break;
+        case 'exercises':
+          renderExercises();
+          break;
+      }
     }
+
+    this.#limits = limits;
   }
 }
 

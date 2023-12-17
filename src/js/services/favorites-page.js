@@ -7,23 +7,7 @@ import {
   handleFavoritesRemove,
 } from '../handlers';
 import scrollToTopOrElement from '../helpers/scroll';
-// import { getDeviseType } from '../helpers/screen-resolution';
-const cardsQuantity = {
-  mobile: { subfilters: 9, exercises: 8, favorites: 8 },
-  tablet: { subfilters: 12, exercises: 10, favorites: 10 },
-  desktop: { subfilters: 12, exercises: 10, favorites: 999 },
-};
-
-function getDeviseType() {
-  let key = 'desktop';
-  if (window.screen.width < 768) {
-    key = 'mobile';
-  }
-  if (window.screen.width >= 768 && window.screen.width < 1440) {
-    key = 'tablet';
-  }
-  return cardsQuantity[key];
-}
+import { getDeviseType } from '../helpers/screen-resolution';
 
 class Favorites {
   #exercises;
@@ -51,7 +35,7 @@ class Favorites {
 
   #renderList() {
     const totalPages = Math.ceil(this.#exercises.length / this.#limit);
-
+   
     if (totalPages && this.#page > totalPages) {
       this.#page = totalPages;
     }
@@ -60,7 +44,7 @@ class Favorites {
       (this.#page - 1) * this.#limit,
       this.#limit
     );
-
+    
     renderFavorites(array, this.#page, totalPages);
     this.#savePage();
   }
@@ -99,6 +83,8 @@ class Favorites {
   }
 
   refreshLimits(limits) {
+    if (limits.favorites === this.#limit) return
+
     this.#limit = limits.favorites;
     this.#renderList();
   }
@@ -106,7 +92,7 @@ class Favorites {
 
 const favorites = new Favorites(
   JSON.parse(localStorage.getItem(common.LS_KEY_FAVORITES)) ?? [],
-  sessionStorage.getItem(common.SS_KEY_FAVORITES) ?? 1,
+  parseInt(sessionStorage.getItem(common.SS_KEY_FAVORITES)) || 1,
   getDeviseType().favorites,
   elements.body.dataset.page
 );
