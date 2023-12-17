@@ -15,10 +15,13 @@
   color: var(--black);
   border-color: var(--black);
   border-radius: 50%;
+  border: 1px solid;
   width: 31px;
   height: 31px;
+  cursor: default;
 }
 .pagination-el.unactive {
+  background-color: transparent;
   color: var(--disabled);
 }
 .js-pagination {
@@ -40,4 +43,8 @@
     width: 32px;
     height: 32px;
   }
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
 }

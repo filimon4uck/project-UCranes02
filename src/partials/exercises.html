@@ -2,21 +2,26 @@
   <div class="container">
     <div class="exercises-header">
       <div class="exercises-titles">
-        <button class="js-back-button back-button back-button-hidden" type='button'>Go back</button>
+        <button
+          class="js-back-button back-button back-button-hidden"
+          type="button"
+        >
+          Go back
+        </button>
         <h2 class="exercises-title">Exercises</h2>
-        <div class="js-subtitle subtitle-block">
-        </div>
-        <button class="js-back-button back-button back-button-hidden" type='button'>Go back</button>
+        <div class="js-subtitle subtitle-block"></div>
+        <button
+          class="js-back-button back-button back-button-hidden"
+          type="button"
+        >
+          Go back
+        </button>
       </div>
       <div class="exercises-filters">
         <load ="partials/search-form.html" />
         <ul class="js-filter filter-buttons">
           <li>
-            <button
-              class="filter-button"
-              type="button"
-              data-filter="muscles"
-            >
+            <button class="filter-button" type="button" data-filter="muscles">
               Muscles
             </button>
           </li>
@@ -36,7 +41,9 @@
     <div class="exercises-body">
       <div class="gallery-box">
         <ul data-cards="subfilters" class="js-gallery gallery-list"></ul>
-        <ul class="js-pagination"></ul>
+        <div class="pagination-container">
+          <ul class="js-pagination"></ul>
+        </div>
       </div>
       <load ="partials/aside.html" />
     </div>
