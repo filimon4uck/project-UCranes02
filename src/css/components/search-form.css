@@ -25,7 +25,7 @@
   padding: 12px 46px 12px 14px;
   font-size: 14px;
   line-height: 1.43;
-  background-color: transparent;
+  background-color: transparent;  
   border: none;
   border-radius: 30px;
   outline: 1px solid var(--black);
@@ -66,4 +66,35 @@
 
 .search-icon {
   transition: transform var(--transition-timing);
+}
+
+.close-icon {
+  transition: transform var(--transition-timing);
+  stroke: #242424;
+}
+
+.search-input:placeholder-shown ~ .search-button .close-icon {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.search-input:not(:placeholder-shown) ~ .search-button .search-icon {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
