@@ -1,10 +1,10 @@
-function showLoader() {
-  const loader = document.querySelector('.loader');
-  loader.classList.remove('hidden');
+function showLoader(container) {
+  const loader = (container || document).querySelector('.loader');
+  loader.classList.remove('is-hidden');
 }
-function hideLoader() {
-  const loader = document.querySelector('.loader');
-  loader.classList.add('hidden');
+function hideLoader(container) {
+  const loader = (container || document).querySelector('.loader');
+  loader.classList.add('is-hidden');
 }
 
 export { showLoader, hideLoader };

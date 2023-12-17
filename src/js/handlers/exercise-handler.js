@@ -38,6 +38,7 @@ const closeDetailsPopup = backdrop => {
   popUpState.detailsPopup = false;
   popUpState.ratingPopup = false;
   backdrop?.classList.add('is-hidden');
+  backdrop?.querySelector('[data-modal]')?.remove();
   backdrop?.querySelector('.exercise-modal')?.remove();
   document.documentElement.classList.remove('no-scroll');
 };
@@ -122,21 +123,22 @@ async function handleExercise(e) {
   if (!e.target.closest('[data-id]') || e.target.closest('[data-delete]'))
     return;
 
+  const backdrop = document.querySelector('.exercise-modal-backdrop');
+  backdrop.classList.remove('is-hidden');
+  
   try {
     const exerciseId = e.target.closest('[data-id]').dataset.id;
-    const backdrop = document.querySelector('.exercise-modal-backdrop');
-    backdrop.classList.remove('is-hidden');
     
     renderLoader(backdrop);
-    showLoader();
-    debugger;
+    showLoader(backdrop);
     const data = await exercisesApi.getExerciseById(exerciseId);
-    hideLoader();
+    hideLoader(backdrop);
     const detailsPopup = exerciseDetailsMarkup(data);
     const modalElement = handleListeners(detailsPopup, data, backdrop);
   } catch (err) {
     console.error(err);
     showError('Something went wrong. Please try again later.');
+    hideLoader(backdrop);
   }
 }
 
