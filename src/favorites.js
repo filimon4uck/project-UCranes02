@@ -6,6 +6,7 @@ import handleExercise from './js/handlers/exercise-handler';
 import { renderFavorites } from './js/renderers';
 import handleFavoritePagination from './js/handlers/favorites-pagination-handler';
 import { handlerOpenMenu } from './js/handlers/index';
+import { renderQuote } from './js/renderers';
 
 elements.pagination.addEventListener('click', handleFavoritePagination);
 elements.btnOpenBurger.addEventListener('click', handlerOpenMenu);
@@ -20,4 +21,5 @@ function favoritesRemoveHandler(e) {
   renderFavorites();
 }
 
+renderQuote("favorite");
 renderFavorites();
