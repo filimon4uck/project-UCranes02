@@ -77,6 +77,14 @@
     margin-bottom: 20px;
 }
 
+.exercise-card-img-wrap::after {
+  content: '';
+  position: absolute;
+  width: 295px;
+  height: 258px;
+  background-color: var(--img-overlay);
+}
+
 .exercise-card-img-wrap img {
   width: 295px;
   height: 258px;
@@ -222,6 +230,11 @@
     height: 259px;
     margin-right: 32px;
     margin-bottom: 0;
+  }
+
+  .exercise-card-img-wrap::after {
+    width: 270px;
+    height: 259px;
   }
 
   .exercise-card-img-wrap img {

@@ -32,7 +32,9 @@ function exerciseDetailsMarkup({
         </button>
         <div class="exercise-card">
             <div class="exercise-card-img-wrap">
-                <img src=${gifUrl} alt="">
+                <img src=${
+                  gifUrl ? gifUrl : '../../img/no-foto.jpeg'
+                } alt="Exercise image">
             </div>
                 <div class="exercise-card-info">
                     <div>
