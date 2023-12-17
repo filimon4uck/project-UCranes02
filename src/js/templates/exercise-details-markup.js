@@ -2,6 +2,7 @@ import heartIcon from '../../img/icons.svg#icon-heart';
 import removeIcon from '../../img/icons.svg#icon-remove';
 import closeIcon from '../../img/icons.svg#icon-close';
 import starIcon from '../../img/icons.svg#icon-star';
+import noImgIcon from '../../img/icons.svg#icon-camera';
 
 function exerciseDetailsMarkup({
   bodyPart,
@@ -23,7 +24,6 @@ function exerciseDetailsMarkup({
     isId = parsedData.some(obj => obj._id === _id);
   }
   return `
-  
     <div class="exercise-modal">
         <button class="exercise-card-close-btn" type="button">
             <svg class="exercise-card-close-icon" aria-label="Modal window close icon">
@@ -32,9 +32,19 @@ function exerciseDetailsMarkup({
         </button>
         <div class="exercise-card">
             <div class="exercise-card-img-wrap">
-                <img src=${
-                  gifUrl ? gifUrl : '../../img/no-foto.jpeg'
-                } alt="Exercise image">
+            ${
+              gifUrl
+                ? `<img src=${gifUrl} alt="Exercise image">`
+                : `
+            <div class="exercise-card-no-img-wrap">
+              <svg class="exercise-card-no-img" aria-label="No image">
+                  <use class="exercise-card-no-img-icon" href="./img/icons.svg#icon-camera"></use>
+              </svg>
+              <span>image not found</span>
+            </div>
+            `
+            }
+    
             </div>
                 <div class="exercise-card-info">
                     <div>
