@@ -39,7 +39,7 @@ class Favorites {
   }
 
   #savePage() {
-    sessionStorage.setItem(common.SS_KEY_FAVORITES, JSON.stringify(this.#page));
+    sessionStorage.setItem(common.SS_KEY_FAVORITES, this.#page);
   }
 
   #saveExercises() {
@@ -51,13 +51,16 @@ class Favorites {
 
   #renderList() {
     const totalPages = Math.ceil(this.#exercises.length / this.#limit);
-    if (this.#page > totalPages) {
+
+    if (totalPages && this.#page > totalPages) {
       this.#page = totalPages;
     }
+
     const array = [...this.#exercises].splice(
       (this.#page - 1) * this.#limit,
       this.#limit
     );
+
     renderFavorites(array, this.#page, totalPages);
     this.#savePage();
   }
@@ -103,7 +106,7 @@ class Favorites {
 
 const favorites = new Favorites(
   JSON.parse(localStorage.getItem(common.LS_KEY_FAVORITES)) ?? [],
-  JSON.parse(sessionStorage.getItem(common.SS_KEY_FAVORITES)) ?? 1,
+  sessionStorage.getItem(common.SS_KEY_FAVORITES) ?? 1,
   getDeviseType().favorites,
   elements.body.dataset.page
 );
