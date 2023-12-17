@@ -1,4 +1,4 @@
-function loaderMurkup() {
-  return `<span class="loader hidden"></span>`;
+function loaderMarkup() {
+  return `<span class="loader is-hidden"></span>`;
 }
-export default loaderMurkup;
+export default loaderMarkup;

@@ -22,7 +22,7 @@ function exerciseDetailsMarkup({
     isId = parsedData.some(obj => obj._id === _id);
   }
   return `
-  <div class="exercise-modal-backdrop" >
+  
     <div class="exercise-modal">
         <button class="exercise-card-close-btn" type="button">
             <svg class="exercise-card-close-icon" aria-label="Modal window close icon">
@@ -123,8 +123,7 @@ function exerciseDetailsMarkup({
                 </div>
             </div>
         </div>
-    </div>
-</div>`;
+    </div>`;
 }
 
 export default exerciseDetailsMarkup;

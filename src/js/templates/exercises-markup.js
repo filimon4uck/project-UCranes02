@@ -29,7 +29,8 @@ function exercisesMarkup(array, page) {
                 <div class="cont-card-rating">
                   <p class="card-rating-exer">${rating}</p>
                   <svg class="icon-card-exer" width="18" height="18">
-                    <use href="${starIconPath}"></use>
+                     <!-- <use href="${starIconPath}"></use> -->
+                     <use href="./img/icons.svg#icon-star"></use>
                   </svg>
                 </div>
               `
