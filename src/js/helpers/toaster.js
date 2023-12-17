@@ -4,11 +4,12 @@ import 'izitoast/dist/css/iziToast.min.css';
 iziToast.settings({
   timeout: 5000,
   resetOnHover: true,
-  position: 'bottomCenter',
+  position: 'topCenter',
   transitionIn: 'flipInX',
   transitionOut: 'flipOutX',
   theme: 'dark',
   backgroundColor: '#242424',
+  maxWidth: 600,
 });
 
 function showError(message) {
