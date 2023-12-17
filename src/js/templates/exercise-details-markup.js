@@ -1,6 +1,7 @@
 import heartIcon from '../../img/icons.svg#icon-heart';
 import removeIcon from '../../img/icons.svg#icon-remove';
 import closeIcon from '../../img/icons.svg#icon-close';
+import starIcon from '../../img/icons.svg#icon-star';
 
 function exerciseDetailsMarkup({
   bodyPart,
@@ -49,7 +50,7 @@ function exerciseDetailsMarkup({
                             ? 'var(--yellow)'
                             : 'var(--white-transparent-20)'
                         } >
-                            <use href="/img/icons.svg#icon-star"></use>
+                            <use href="${starIcon}"></use>
                         </svg>`;
                           })
                           .join('')}
@@ -115,7 +116,7 @@ function exerciseDetailsMarkup({
                             }</span>
                             <svg class="favorites-icon" aria-label="Favorite icon" width="20" height="20" >
                                 <use href="${
-                                  isId ? `${removeIcon}` : `${heartIcon}heart`
+                                  isId ? `${removeIcon}` : `${heartIcon}`
                                 }"></use>
                             </svg>
                         </button>

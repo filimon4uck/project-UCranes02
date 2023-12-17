@@ -1,5 +1,8 @@
 .header {
-  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,7 +51,7 @@
   }
 
   .header {
-    margin-top: 24px;
+    padding-top: 24px;
   }
 
   .nav-list {
@@ -72,12 +75,28 @@
     line-height: 1.5;
   }
 
+  .nav-home, .nav-favorites {
+    border-radius: 30px;
+  }
+
   .home-page .nav-home,
   .favorites-page .nav-favorites {
-    border-radius: 30px;
-    background: var(--white);
+    background-color: var(--white);
     color: var(--black);
     flex-shrink: 0;
+    transition: background-color,color  var(--transition-timing);
+  }
+
+  .home-page .nav-favorites:hover,
+  .home-page .nav-favorites:focus {
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .favorites-page .nav-home:hover,
+  .favorites-page .nav-home:focus {
+    background-color: var(--white);
+    color: var(--black);
   }
 }
 
@@ -88,7 +107,7 @@
   }
 
   .header {
-    margin-top: 28px;
+    padding-top: 28px;
   }
 
   .nav-list {
