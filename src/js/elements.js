@@ -12,6 +12,9 @@ const elements = {
   policyBtn: document.querySelector('.js-policy-modal-open'),
   termsBtn: document.querySelector('.js-terms-modal-open'),
   scrollTopBtn: document.querySelector('.js-scroll-top-button'),
+  btnCloseBurger: document.querySelector('.mobile-menu-close-btn'),
+  btnOpenBurger: document.querySelector('.mobile-menu-open-btn'),
+  burgerMenu: document.querySelector('.mobile-menu-backdrop'),
 };
 
 export { elements };
