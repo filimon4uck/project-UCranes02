@@ -178,7 +178,6 @@ screen and (min-device-pixel-ratio: 2) {
     }
 
     .text-quote {
-        max-width: 270px;
         margin-bottom: 18px;
     }
 
@@ -216,6 +215,7 @@ screen and (min-device-pixel-ratio: 2) {
     }
 
     .item-text-container {
+        max-width: 314px;
         overflow: visible;
         display: block;
         max-height: unset;
