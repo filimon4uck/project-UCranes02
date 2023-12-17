@@ -44,3 +44,16 @@
     margin-left: -1px;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .favorites-body {
+    max-height: calc(100vh - 313px);
+  }
+  .favorites-body .pagination-container {
+    display: none;
+  }
+  .gallery-list[data-cards="favorites"] {
+    height: 100%;
+    overflow-y: scroll;
+  }
+}
