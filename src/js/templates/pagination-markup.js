@@ -1,13 +1,22 @@
 function paginationMarkup(activePage, total) {
   let arrElPagin = [];
   let arrNumPagin = [];
+
   if (total <= 5) {
     for (let currentPage = 1; currentPage <= total; currentPage += 1) {
-      arrElPagin.push(
-        `<li class="elm"><button type="button" class="pagination-el ${
-          currentPage === activePage ? 'active' : 'unactive'
-        }" data-page="${currentPage}" >${currentPage}</button></li>`
-      );
+      if (!isActivePage(currentPage, activePage)) {
+        arrElPagin.push(
+          `<li class="elm"><button type="button" class="pagination-el ${
+            isActivePage(currentPage, activePage) ? 'active' : 'unactive'
+          }" data-page="${currentPage}" >${currentPage}</button></li>`
+        );
+      } else {
+        arrElPagin.push(
+          `<li class="elm"><button type="button" disabled class="pagination-el ${
+            isActivePage(currentPage, activePage) ? 'active' : 'unactive'
+          }" data-page="${currentPage}" >${currentPage}</button></li>`
+        );
+      }
     }
   } else {
     const startPage = Math.max(Math.min(activePage - 2, total - 4), 1);
@@ -18,7 +27,7 @@ function paginationMarkup(activePage, total) {
       currentPage += 1
     ) {
       arrNumPagin.push(currentPage);
-      if (currentPage !== activePage) {
+      if (!isActivePage(currentPage, activePage)) {
         arrElPagin.push(
           `<li class="elm"><button type="button" class="pagination-el unactive"  data-page="${currentPage}" >${currentPage}</button></li>`
         );
@@ -43,4 +52,7 @@ function paginationMarkup(activePage, total) {
   return arrElPagin.join('');
 }
 
+function isActivePage(current, active) {
+  return current === active;
+}
 export default paginationMarkup;
