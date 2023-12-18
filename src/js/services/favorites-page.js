@@ -55,6 +55,8 @@ class Favorites {
     elements.gallery.addEventListener('click', handleExercise);
     elements.gallery.addEventListener('click', handleFavoritesRemove);
     elements.pagination.addEventListener('click', handleFavoritePagination);
+
+    elements.navFavorites.forEach(elem => elem.setAttribute('href', "javascript:void(0)"));
   }
 
   isFavorite(id) {

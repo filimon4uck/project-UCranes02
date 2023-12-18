@@ -1,4 +1,6 @@
 const elements = {
+  navHome: document.querySelectorAll('.js-nav-home'),
+  navFavorites: document.querySelectorAll('.js-nav-favorites'),
   body: document.querySelector('body'),
   burger: document.querySelector('.js-burger'),
   filter: document.querySelector('.js-filter'),

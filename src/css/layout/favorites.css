@@ -1,3 +1,12 @@
+
+.link-exercise-card[data-id] {
+  transition: opacity var(--transition-timing);
+}
+
+[data-id].unmounting {
+  opacity: 0;
+}
+
 .section-favorites {
   height: 100%;
   padding-top: 80px;

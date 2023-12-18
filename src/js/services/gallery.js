@@ -81,8 +81,11 @@ class Gallery {
     );
     elements.resetSearchForm.addEventListener('click', handleResetSearch);
     elements.gallery.removeEventListener('click', handleSubfilter);
-    
     elements.searchForm.reset();
+    elements.searchForm.elements.exercise.setAttribute(
+      'value',
+      this.#searchQuery
+    );
   }
 
   #showSubfiltersGallery() {
@@ -154,6 +157,8 @@ class Gallery {
       elements.policyBtn.addEventListener('click', handlePolicyModal);
       elements.termsBtn.addEventListener('click', handlePolicyModal);
     }
+
+    elements.navHome.forEach(elem => elem.setAttribute('href', "javascript:void(0)"));
   }
 
   changeFilter(newFilter) {
@@ -216,6 +221,7 @@ class Gallery {
   }
 
   goSearch(query) {
+    if (query === this.#searchQuery) return;
     exercisesApi.keyword = query;
     exercisesApi.page = 1;
     renderExercises(renderPagination);
@@ -226,6 +232,7 @@ class Gallery {
   }
 
   resetSearch() {
+    if (this.#searchQuery === '') return;
     exercisesApi.keyword = '';
     exercisesApi.page = 1;
     renderExercises(renderPagination);

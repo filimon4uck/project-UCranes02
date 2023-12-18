@@ -81,6 +81,7 @@
 
   .home-page .nav-home,
   .favorites-page .nav-favorites {
+    cursor: default;
     background-color: var(--white);
     color: var(--black);
     flex-shrink: 0;
