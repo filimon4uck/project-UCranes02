@@ -59,6 +59,7 @@
     display: none;
   }
   .gallery-list[data-cards='favorites'] {
+    padding-bottom: 12px;
     height: 100%;
     overflow-y: scroll;
   }
