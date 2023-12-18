@@ -21,10 +21,6 @@
   transform: translateX(100%);
 }
 
-.is-hidden .mobile-menu {
-  transform: scale(0%);
-}
-
 .mobile-menu {
   transform: scale(100%);
   margin-left: auto;
