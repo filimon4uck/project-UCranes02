@@ -1,6 +1,11 @@
 .section-favorites {
+  height: 100%;
   padding-top: 80px;
   padding-bottom: 80px;
+}
+
+.section-favorites .container {
+  height: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -35,6 +40,7 @@
 
 .favorites-body {
   display: flex;
+  height: 100%;
 }
 
 @media screen and (max-width: 767px) {
@@ -58,6 +64,27 @@
 }
 
 .list-empty {
+  width: 100%;
+}
+
+.list-empty p {
+  margin: 0 auto;
   text-align: center;
-  align-self: center;
+  max-width: 318px;
+  font-size: 14px;
+  line-height: 1.29;
+}
+
+@media screen and (min-width: 768px) {
+  .list-empty p {
+    max-width: 554px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .list-empty p {
+    padding-top: 114px;
+  }
 }
