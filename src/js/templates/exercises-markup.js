@@ -20,11 +20,13 @@ function exercisesMarkup(array, page) {
             ${
               page === 'favorites'
                 ? `
+              <div class="btn-card-group">
                 <button class="btn-delete-card" type="button" data-delete="${_id}">
                 <svg class="icon-delete-favorite" width="16" height="16">
                   <use href="${removeIconPath}"></use>
                 </svg>
                 </button>
+              </div> 
               `
                 : `
             <div class="btn-card-group">
@@ -43,16 +45,21 @@ function exercisesMarkup(array, page) {
                </svg>
                </button>
             </div>  
+            ${
+              rating
+                ? `
                 <div class="cont-card-rating">
-                  <p class="card-rating-exer">${rating}</p>
-                  <svg class="icon-card-exer" width="18" height="18">
-                     <use href="${starIconPath}"></use>
-                  </svg>
-                </div>
+                <p class="card-rating-exer">${Math.round(rating) + '.0'}</p>
+                <svg class="icon-card-exer" width="18" height="18">
+                  <use href="${starIconPath}"></use>
+                </svg>
+              </div>`
+                : ``
+            }
               `
             }
             <div class="block-btn-icon-exer">
-              <button class="btn-card-exer">Start</button>
+              <span class="btn-card-exer">Start</span>
               <svg class="icon-card-btn" width="16" height="16">
                 <use href="${iconArrowPath}"></use>
               </svg>
