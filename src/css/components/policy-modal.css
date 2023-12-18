@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(4, 4, 4, 0.4);
+  background-color: var(--modal-overlay);
   z-index: 2000;
   transform: scale(1);
   transition: opacity var(--transition-timing),
@@ -38,6 +38,10 @@
   padding: 0 20px;
 }
 
+.policy-modal ::-webkit-scrollbar-thumb {
+  background-color: var(--white-transparent-60);
+}
+
 .policy-modal-close-btn {
   position: absolute;
   right: 20px;
@@ -54,6 +58,7 @@
   color: var(--white);
   transition: color var(--transition-timing);
 }
+
 .close-mobile-menu-icon {
   width: 32px;
   height: 32px;
@@ -62,7 +67,7 @@
 
 .policy-modal-close-btn:hover,
 .policy-modal-close-btn:focus {
-  color: rgba(244, 244, 244, 0.4);
+  color: var(--white-transparent-40);
 }
 
 .policy-title {
