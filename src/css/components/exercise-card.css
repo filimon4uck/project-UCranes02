@@ -5,6 +5,7 @@
   width: 32px;
   height: 32px;
   position: relative;
+  margin: 0 8px;
 }
 .icon-card-btn {
   stroke: var(--black);
@@ -93,12 +94,9 @@
 .cont-card-rating {
   display: flex;
   align-items: center;
-  margin-left: 16px;
   gap: 4px;
 }
 .card-rating-exer {
-  color: var(--black);
-
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   font-weight: 400;
@@ -141,12 +139,12 @@
 .list-info-exer {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  max-width: 303px;
+  justify-content: start;
+  gap: 10px;
 }
 .text-title-item-exer {
   color: rgba(36, 36, 36, 0.4);
-
+  flex-shrink: 0;
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 12px;
   font-weight: 400;
@@ -155,14 +153,12 @@
 .text-info-exer {
   overflow: hidden;
   color: var(--black);
-
   font-feature-settings: 'clig' off, 'liga' off;
   text-overflow: ellipsis;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
   display: -webkit-box;
-  width: 40px;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   text-transform: capitalize;
@@ -177,7 +173,7 @@
   width: 89px;
 }
 .medium {
-  width: 58px;
+  width: 60px;
 }
 .small {
   width: 37px;
@@ -186,7 +182,7 @@
   max-width: 40px;
 }
 .size-body {
-  max-width: 31px;
+  max-width: 40px;
 }
 .size-target {
   display: -webkit-box;
@@ -206,13 +202,19 @@
     line-height: 1.33;
   }
   .list-info-exer {
-    max-width: 312px;
+
+  }
+  .item-card-exer {
+    gap: 4px;
   }
   .cont-icon-name-text {
     margin-bottom: 8px;
   }
   .main-item_card-exercises {
     width: 344px;
+  }
+  .size-target {
+    width: 25px;
   }
 }
 @media screen and (min-width: 1440px) {
@@ -226,12 +228,17 @@
     width: 272px;
   }
   .list-info-exer {
-    max-width: 341px;
-    justify-content: center;
     gap: 16px;
   }
   .size-target {
     font-feature-settings: 'clig' off, 'liga' off;
-    width: 32px;
+    width: 60px;
   }
+  .size-time {
+    max-width: 60px;
+  }
+  .size-body {
+    max-width: 60px;
+  }
+
 }

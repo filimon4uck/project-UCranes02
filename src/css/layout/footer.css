@@ -75,7 +75,7 @@
 
 .terms button:hover,
 .terms button:focus {
-  color: rgba(244, 244, 244, 0.4);
+  color: var(--white-transparent-40);
 }
 
 @media screen and (max-width: 767px) {
