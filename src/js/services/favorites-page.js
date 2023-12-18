@@ -79,7 +79,7 @@ class Favorites {
   changePage(newPage) {
     this.#page = newPage;
     this.#renderList();
-    scrollToTopOrElement(elements.gallery);
+    scrollToTopOrElement(elements.favoritesAnchor);
   }
 
   refreshLimits(limits) {

@@ -9,8 +9,8 @@ function renderFavorites(array, page, totalPages) {
       "<li class='list-empty'><p>It appears that you haven't added any exercises to your favorites yet. To get started, you can add exercises that you like to your favorites for easier access in the future.</p></li>";
   } else {
     elements.gallery.innerHTML = exercisesMarkup(array, 'favorites');
-    renderPagination(page, totalPages);
   }
+  renderPagination(page, totalPages);
   elements.gallery.classList.remove('unmounting');
 }
 
