@@ -1,3 +1,6 @@
+.js-anchor {
+  position: absolute;
+}
 
 .link-exercise-card[data-id] {
   transition: opacity var(--transition-timing);
