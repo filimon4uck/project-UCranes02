@@ -16,6 +16,7 @@ const elements = {
   btnCloseBurger: document.querySelector('.mobile-menu-close-btn'),
   btnOpenBurger: document.querySelector('.mobile-menu-open-btn'),
   burgerMenu: document.querySelector('.mobile-menu-backdrop'),
+  favoritesAnchor: document.querySelector('.js-anchor'),
 };
 
 export { elements };

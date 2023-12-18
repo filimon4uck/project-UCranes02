@@ -7,6 +7,7 @@ import { renderPagination } from '../helpers/pagination';
 import {
   handleBackButton,
   handleExercise,
+  handleFavoritesRemove,
   handleFilter,
   handlePagination,
   handlePolicyModal,
@@ -14,6 +15,7 @@ import {
   handleSearch,
   handleSubfilter,
   handleSubscribe,
+  handlerAddToFavoritesBtn,
 } from '../handlers';
 import scrollToTopOrElement from '../helpers/scroll';
 import { getDeviseType } from '../helpers/screen-resolution';
@@ -68,6 +70,8 @@ class Gallery {
 
     elements.gallery.addEventListener('click', handleExercise);
     elements.backBtn.addEventListener('click', handleBackButton);
+    elements.gallery.addEventListener('click', handlerAddToFavoritesBtn);
+    elements.gallery.addEventListener('click', handleFavoritesRemove);
     elements.searchForm.addEventListener(
       'input',
       throttle(handleSearch, 1000, {
@@ -75,8 +79,9 @@ class Gallery {
         trailing: true,
       })
     );
-    elements.gallery.removeEventListener('click', handleSubfilter);
     elements.resetSearchForm.addEventListener('click', handleResetSearch);
+    elements.gallery.removeEventListener('click', handleSubfilter);
+    
     elements.searchForm.reset();
   }
 
@@ -89,6 +94,8 @@ class Gallery {
     elements.gallery.addEventListener('click', handleSubfilter);
     elements.gallery.removeEventListener('click', handleExercise);
     elements.backBtn.removeEventListener('click', handleBackButton);
+    elements.gallery.removeEventListener('click', handlerAddToFavoritesBtn);
+    elements.gallery.removeEventListener('click', handleFavoritesRemove);
     elements.searchForm.removeEventListener(
       'input',
       throttle(handleSearch, 1000, {

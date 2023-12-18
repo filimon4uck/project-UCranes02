@@ -18,6 +18,14 @@ function handleScrollTopBtnShow() {
       'js-scroll-top-button-active'
     );
   }
+  const scrollPosition =
+    document.documentElement.scrollTop || document.body.scrollTop;
+  const maxScroll =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  const percentageScrolled = (scrollPosition / maxScroll) * 100;
+
+  scrollTopBtn.style.background = `conic-gradient(rgba(244, 244, 244, 1) ${percentageScrolled}%, #242424 ${percentageScrolled}%)`;
 }
 
 export { handleScrollTop, handleScrollTopBtnShow };
